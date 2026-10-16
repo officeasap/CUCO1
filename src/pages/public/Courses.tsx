@@ -22,7 +22,7 @@ const standaloneCourses = [
     format: '8 sessions · 3 hours each',
     classSize: '8 students maximum',
     price: '$1,000',
-    instructor: 'KWAME KWAME',
+    instructor: 'Loni Berry',
     deliverables: [
       'A recorded scene',
       'A character journal',
@@ -36,11 +36,11 @@ const standaloneCourses = [
     level: 'STANDALONE',
     title: 'Directing',
     description:
-      'Professional directing instruction from KWAME KWAME. Full course details will be announced soon.',
+      'Professional directing instruction from Loni Berry. Full course details will be announced soon.',
     format: 'Details coming soon',
     classSize: 'Details coming soon',
     price: 'Coming soon',
-    instructor: 'KWAME KWAME',
+    instructor: 'Loni Berry',
     deliverables: [],
     available: false,
   },
@@ -706,11 +706,11 @@ export function Courses() {
               },
               {
                 role: 'DIRECTING',
-                name: 'KWAME KWAME',
+                name: 'Loni Berry',
               },
               {
                 role: 'ACTING',
-                name: 'KWAME KWAME',
+                name: 'Loni Berry',
               },
             ].map((instructor) => (
               <article

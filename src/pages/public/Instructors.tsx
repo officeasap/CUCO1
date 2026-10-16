@@ -1,3 +1,4 @@
+
 import {
   ArrowRight,
   BookOpen,
@@ -11,17 +12,18 @@ import { Link } from 'react-router-dom'
 
 const instructors = [
   {
-    name: 'KWAME KWAME',
+    name: 'Loni Berry',
+    image: '/brand/loni-berry.png',
     role: 'Founder · Artistic Director · Acting & Directing',
     disciplines: ['Acting', 'Directing'],
     icon: Theater,
     summary:
       'American theatre educator, playwright, director, and founder of Culture Collective Studio in Bangkok.',
     bio: [
-      'KWAME KWAME is an American theatre educator, playwright, and director whose career has moved between professional theatre, higher education, curriculum development, and international artistic collaboration.',
+      'Loni Berry is an American theatre educator, playwright, and director whose career has moved between professional theatre, higher education, curriculum development, and international artistic collaboration.',
       'His teaching has included Williams College, California State University San Marcos, and the University of California San Diego. He was also the founding director of Oakland School for the Arts, where he led a curriculum combining college preparation with pre-professional arts training.',
       'As a playwright and director, his work has been presented at venues and institutions including the American Place Theatre, California Center for the Arts, Great Lakes Theater Festival, Hartford Stage, Kennedy Center, La Jolla Playhouse, Mirror Repertory Theatre, National Black Theatre Festival, New Federal Theatre, Public Theatre, Rites & Reason Theatre, and Seattle Rep.',
-      'Based in Bangkok, KWAME KWAME founded Culture Collective Studio and became a professor at Bangkok University. He was educated at Brown University and Yale University.',
+      'Based in Bangkok, Loni Berry founded Culture Collective Studio and became a professor at Bangkok University. He was educated at Brown University and Yale University.',
     ],
     credentials: [
       'Brown University',
@@ -52,6 +54,7 @@ const instructors = [
   },
   {
     name: 'Kenneth Tarver',
+    image: '/brand/kenneth-traver.png',
     role: 'Voice · Speech & Singing Instructor',
     disciplines: ['Voice & Speech', 'Singing'],
     icon: Mic2,
@@ -103,12 +106,24 @@ function FacultyCard({
       <div className="grid gap-0 lg:grid-cols-[0.7fr_1.3fr]">
         <div className="relative flex min-h-72 flex-col justify-between bg-smoked-card p-7 shadow-pressed md:min-h-80 md:p-9 lg:min-h-full">
           <div className="flex items-start justify-between gap-4">
-            <div className="flex h-16 w-16 items-center justify-center rounded-card bg-smoked-card shadow-pressed">
-              <Icon
-                aria-hidden="true"
-                className="h-7 w-7 text-smoked-ember"
+            {instructor.image ? (
+              <img
+                src={instructor.image}
+                alt={instructor.name}
+                width={160}
+                height={160}
+                loading="lazy"
+                decoding="async"
+                className="h-32 w-32 shrink-0 rounded-card object-cover shadow-raised md:h-40 md:w-40"
               />
-            </div>
+            ) : (
+              <div className="flex h-32 w-32 shrink-0 items-center justify-center rounded-card bg-smoked-card shadow-pressed md:h-40 md:w-40">
+                <Icon
+                  aria-hidden="true"
+                  className="h-12 w-12 text-smoked-ember md:h-14 md:w-14"
+                />
+              </div>
+            )}
 
             <p className="cuco-numeric text-xs text-text-on-card-secondary">
               FACULTY · {String(index + 1).padStart(2, '0')}

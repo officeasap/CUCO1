@@ -209,7 +209,7 @@ export function Home() {
             <div>
               <p className="text-2xl leading-9 text-text-on-substrate-primary md:text-3xl md:leading-10">
                 Founded by American director, playwright, and educator{' '}
-                <strong>KWAME KWAME</strong>, Culture Collective Studio spent
+                <strong>Loni Berry</strong>, Culture Collective Studio spent
                 six years creating provocative, multilingual, award-winning
                 theatre in Bangkok.
               </p>

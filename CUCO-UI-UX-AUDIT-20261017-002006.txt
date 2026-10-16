@@ -1,0 +1,681 @@
+============================================================
+CUCO PLATFORM — UI/UX LAW FORENSIC SWEEP
+Generated: 2026-10-17T00:20:07+07:00
+Repository: /c/Users/LENOVO/Desktop/cuco-platform
+Authority: CUCO ONLINE PLATFORM UI/UX LAW v1.0.0
+Mode: READ-ONLY SOURCE INSPECTION
+============================================================
+
+=== 1. PROJECT AND BUILD INVENTORY ===
+FOUND  package.json
+FOUND  pnpm-lock.yaml
+ABSENT package-lock.json
+FOUND  vite.config.ts
+FOUND  index.html
+FOUND  src/index.css
+FOUND  src/App.tsx
+FOUND  src/main.tsx
+ABSENT src/styles/globals.css
+ABSENT src/styles/index.css
+FOUND  src/components
+
+--- Package scripts and dependencies ---
+6:  "scripts": {
+7:    "dev": "vite",
+13:  "dependencies": {
+20:    "lucide-react": "^1.47.0",
+22:    "react": "^19.2.8",
+30:  "devDependencies": {
+40:    "typescript": "~6.0.2",
+41:    "vite": "^8.3.0"
+
+=== 2. SACRED MATERIAL TOKENS AND SHADOWS ===
+src/index.css:81:  --shadow-float:
+src/index.css:85:  --shadow-raised:
+src/index.css:89:  --shadow-raised-hover:
+src/index.css:93:  --shadow-pressed:
+src/index.css:125:  --shadow-contact:
+src/index.css:219:  box-shadow: var(--shadow-raised);
+src/index.css:230:  box-shadow: var(--shadow-raised-hover);
+src/index.css:237:  box-shadow: var(--shadow-pressed);
+src/index.css:251:  box-shadow: var(--shadow-pressed);
+src/index.css:261:    var(--shadow-pressed),
+src/index.css:262:    var(--shadow-contact);
+
+=== 3. VISUAL LAW VIOLATION CANDIDATES ===
+src/index.css:6:  --color-smoked-powder: #1c1b1a;
+src/index.css:7:  --color-smoked-card: #2f2f2c;
+src/index.css:8:  --color-smoked-shadow: #080503;
+src/index.css:9:  --color-smoked-ember: #c43503;
+src/index.css:10:  --color-smoked-success: #56cd64;
+src/index.css:11:  --color-smoked-warning: #e4b34a;
+src/index.css:12:  --color-smoked-information: #62a8c7;
+src/index.css:13:  --color-smoked-error: #d85c55;
+src/index.css:15:  --color-text-on-card-primary: #e5decc;
+src/index.css:16:  --color-text-on-card-secondary: #e5decc;
+src/index.css:17:  --color-text-on-substrate-primary: #e5decc;
+src/index.css:18:  --color-text-on-substrate-muted: #e5decc;
+src/index.css:50:  --material-substrate: #1c1b1a;
+src/index.css:51:  --material-card: #2f2f2c;
+src/index.css:52:  --material-shadow: #080503;
+src/index.css:54:  --operational-ember: #c43503;
+src/index.css:55:  --operational-success: #56cd64;
+src/index.css:56:  --operational-warning: #e4b34a;
+src/index.css:57:  --operational-information: #62a8c7;
+src/index.css:58:  --operational-error: #d85c55;
+src/index.css:60:  --text-card-primary: #e5decc;
+src/index.css:61:  --text-card-secondary: #e5decc;
+src/index.css:62:  --text-substrate-primary: #e5decc;
+src/index.css:63:  --text-substrate-muted: #e5decc;
+src/index.css:70:   * #2f2f2c = the physical object.
+src/index.css:71:   * #080503 = the physical shadow material.
+src/index.css:78:    8px 10px 14px rgba(8, 5, 3, 0.68),
+src/index.css:79:    -3px -3px 7px rgba(8, 5, 3, 0.22);
+src/index.css:82:    11px 13px 18px rgba(8, 5, 3, 0.72),
+src/index.css:83:    -4px -4px 9px rgba(8, 5, 3, 0.24);
+src/index.css:86:    8px 10px 14px rgba(8, 5, 3, 0.68),
+src/index.css:87:    -3px -3px 7px rgba(8, 5, 3, 0.22);
+src/index.css:90:    10px 13px 17px rgba(8, 5, 3, 0.76),
+src/index.css:91:    -4px -4px 9px rgba(8, 5, 3, 0.28);
+src/index.css:94:    inset 4px 5px 8px rgba(8, 5, 3, 0.72),
+src/index.css:95:    inset -3px -3px 7px rgba(8, 5, 3, 0.28);
+src/index.css:109:    1px 1px 1px rgba(8, 5, 3, 0.72);
+src/index.css:112:    1px 1px 1.5px rgba(8, 5, 3, 0.78);
+src/index.css:115:    1px 1px 1px rgba(8, 5, 3, 0.68);
+src/index.css:118:    1px 1px 1px rgba(8, 5, 3, 0.72);
+src/index.css:126:    0 0 0 3px rgba(196, 53, 3, 0.22);
+
+--- Forbidden/regulated UI patterns ---
+src/index.css:131:  font-family: Inter, ui-sans-serif, sans-serif;
+src/index.css:158:  font-family: Inter, ui-sans-serif, sans-serif;
+src/index.css:202:  box-shadow: var(--shadow-physical);
+src/index.css:208:  box-shadow: var(--shadow-physical);
+src/index.css:219:  box-shadow: var(--shadow-raised);
+src/index.css:221:  transition:
+src/index.css:230:  box-shadow: var(--shadow-raised-hover);
+src/index.css:237:  box-shadow: var(--shadow-pressed);
+src/index.css:251:  box-shadow: var(--shadow-pressed);
+src/index.css:260:  box-shadow:
+src/index.css:288:  box-shadow: var(--shadow-physical);
+src/index.css:296:  font-family: "EB Garamond", Georgia, serif;
+src/index.css:302:  font-family: Inter, ui-sans-serif, sans-serif;
+src/index.css:307:  font-family: "JetBrains Mono", monospace;
+src/index.css:312:  font-family: "JetBrains Mono", monospace;
+src/index.css:313:  font-size: 0.68rem;
+src/index.css:322:  font-family: "JetBrains Mono", monospace;
+src/index.css:369:  font-size: clamp(2.25rem, 5vw, 4rem) !important;
+src/index.css:384:  font-size: clamp(1.75rem, 3.5vw, 3rem) !important;
+src/index.css:396:  font-size: clamp(1.375rem, 2.5vw, 2rem) !important;
+src/index.css:406:  font-size: 1.5rem !important;
+src/index.css:411:  font-size: 1.25rem !important;
+src/index.css:416:  font-size: 1rem !important;
+src/index.css:459:@media (prefers-reduced-motion: reduce) {
+
+=== 4. TYPOGRAPHY AND FONT LOADING ===
+src/index.css:1:@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+src/index.css:20:  --font-family-editorial: "EB Garamond", Georgia, serif;
+src/index.css:21:  --font-family-interface: Inter, ui-sans-serif, sans-serif;
+src/index.css:22:  --font-family-mono: "JetBrains Mono", monospace;
+src/index.css:131:  font-family: Inter, ui-sans-serif, sans-serif;
+src/index.css:158:  font-family: Inter, ui-sans-serif, sans-serif;
+src/index.css:296:  font-family: "EB Garamond", Georgia, serif;
+src/index.css:302:  font-family: Inter, ui-sans-serif, sans-serif;
+src/index.css:307:  font-family: "JetBrains Mono", monospace;
+src/index.css:312:  font-family: "JetBrains Mono", monospace;
+src/index.css:322:  font-family: "JetBrains Mono", monospace;
+src/pages/public/Instructors.tsx:50:      'Internationally produced playwright',
+src/pages/public/Instructors.tsx:62:      'His musical education includes study in Detroit and at Interlochen, followed by a Bachelor of Music from Oberlin and a Master of Music from Yale.',
+src/pages/public/Instructors.tsx:70:      'International opera and concert career',
+src/policy/admissions.ts:3:  requiresInterview: boolean
+src/policy/admissions.ts:9:  requiresInterview: false,
+src/types/database.ts:12:  __InternalSupabase: {
+src/types/database.ts:728:type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">
+src/types/database.ts:730:type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, "public">]
+src/types/database.ts:735:    | { schema: keyof DatabaseWithoutInternals },
+src/types/database.ts:737:    schema: keyof DatabaseWithoutInternals
+src/types/database.ts:739:    ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
+src/types/database.ts:740:        DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
+src/types/database.ts:743:  schema: keyof DatabaseWithoutInternals
+src/types/database.ts:745:  ? (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
+src/types/database.ts:746:      DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])[TableName] extends {
+src/types/database.ts:764:    | { schema: keyof DatabaseWithoutInternals },
+src/types/database.ts:766:    schema: keyof DatabaseWithoutInternals
+src/types/database.ts:768:    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+src/types/database.ts:771:  schema: keyof DatabaseWithoutInternals
+src/types/database.ts:773:  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+src/types/database.ts:789:    | { schema: keyof DatabaseWithoutInternals },
+src/types/database.ts:791:    schema: keyof DatabaseWithoutInternals
+src/types/database.ts:793:    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+src/types/database.ts:796:  schema: keyof DatabaseWithoutInternals
+src/types/database.ts:798:  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+src/types/database.ts:814:    | { schema: keyof DatabaseWithoutInternals },
+src/types/database.ts:816:    schema: keyof DatabaseWithoutInternals
+src/types/database.ts:818:    ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
+src/types/database.ts:821:  schema: keyof DatabaseWithoutInternals
+src/types/database.ts:823:  ? DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
+src/types/database.ts:831:    | { schema: keyof DatabaseWithoutInternals },
+src/types/database.ts:833:    schema: keyof DatabaseWithoutInternals
+src/types/database.ts:835:    ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
+src/types/database.ts:838:  schema: keyof DatabaseWithoutInternals
+src/types/database.ts:840:  ? DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
+
+=== 5. CATHEDRAL PRIMITIVES — REUSE CHECK ===
+
+--- Primitive/component source inventory ---
+src/components/dashboard/AchievementCard.tsx
+src/components/dashboard/CourseCard.tsx
+src/components/dashboard/ExamCard.tsx
+src/components/dashboard/LearningProgressCard.tsx
+src/components/dashboard/LearningStatus.tsx
+src/components/dashboard/NextActionCard.tsx
+src/components/dashboard/QuizCard.tsx
+src/components/dashboard/SubjectCard.tsx
+src/components/layout/SiteFooter.tsx
+src/components/payment/PaymentStatus.tsx
+src/components/primitives/CathedralBadge.tsx
+src/components/primitives/CathedralButton.tsx
+src/components/primitives/CathedralCard.tsx
+src/components/primitives/CathedralFooter.tsx
+src/components/primitives/CathedralIcon.tsx
+src/components/primitives/CathedralStatus.tsx
+
+=== 6. INTERACTION AND DEEP-PRESSED CONTROLS ===
+src/components/layout/LeftRail.tsx:38:                  'transition-[box-shadow,transform,color] duration-200',
+src/components/layout/PublicLayout.tsx:28:          'transition-[box-shadow,transform,color] duration-200 ease-cathedral',
+src/components/layout/PublicLayout.tsx:51:            className="shrink-0 rounded-control bg-smoked-card p-2 shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/components/layout/PublicLayout.tsx:75:            className="hidden min-h-11 items-center justify-center rounded-control bg-smoked-ember px-5 py-3 text-sm font-bold tracking-[0.01em] text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/components/layout/RightRail.tsx:68:              className="inline-flex min-h-10 w-full items-center justify-center rounded-control bg-smoked-card px-4 py-2 text-xs font-bold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 hover:-translate-y-px hover:shadow-raised-hover active:translate-y-px active:shadow-pressed"
+src/components/layout/SiteFooter.tsx:50:      className="inline-flex min-h-10 items-center justify-center rounded-control bg-smoked-card px-4 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-text-on-card-primary shadow-raised transition-[box-shadow,transform,color] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/components/layout/SiteFooter.tsx:73:              className="mt-5 inline-flex rounded-control bg-smoked-card p-4 shadow-raised transition-[box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/components/layout/SiteFooter.tsx:145:                  className="inline-flex size-12 items-center justify-center rounded-control bg-smoked-card text-text-on-card-primary shadow-raised transition-[box-shadow,transform,color] duration-200 hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/components/layout/SiteFooter.tsx:147:                  onClick={(event) => {
+src/components/layout/TopBar.tsx:69:            className="h-10 w-full rounded-control bg-smoked-card pl-9 pr-3 text-sm text-text-on-card-primary shadow-pressed outline-none transition-[box-shadow] duration-200 placeholder:text-text-on-card-secondary focus-visible:shadow-contact"
+src/components/layout/TopBar.tsx:77:          className="inline-flex size-10 shrink-0 items-center justify-center rounded-control bg-smoked-card text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 hover:-translate-y-px hover:shadow-raised-hover active:translate-y-px active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-smoked-ember"
+src/components/layout/TopBar.tsx:120:              className="hidden size-10 shrink-0 items-center justify-center rounded-control bg-smoked-card text-text-on-card-primary shadow-raised transition-[box-shadow,transform,color] duration-200 hover:-translate-y-px hover:shadow-raised-hover active:translate-y-px active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-smoked-ember lg:inline-flex"
+src/components/layout/TopBar.tsx:121:              onClick={handleSignOut}
+src/index.css:202:  box-shadow: var(--shadow-physical);
+src/index.css:208:  box-shadow: var(--shadow-physical);
+src/index.css:219:  box-shadow: var(--shadow-raised);
+src/index.css:222:    box-shadow 200ms var(--motion-cathedral),
+src/index.css:227::where(button.bg-smoked-card:hover),
+src/index.css:228::where(a.bg-smoked-card:hover),
+src/index.css:229::where([role="button"].bg-smoked-card:hover) {
+src/index.css:230:  box-shadow: var(--shadow-raised-hover);
+src/index.css:231:  transform: translateY(-1px);
+src/index.css:234::where(button.bg-smoked-card:active),
+src/index.css:235::where(a.bg-smoked-card:active),
+src/index.css:236::where([role="button"].bg-smoked-card:active) {
+src/index.css:237:  box-shadow: var(--shadow-pressed);
+src/index.css:238:  transform: translateY(1px);
+src/index.css:251:  box-shadow: var(--shadow-pressed);
+src/index.css:256:  input.bg-smoked-card:focus-visible,
+src/index.css:257:  select.bg-smoked-card:focus-visible,
+src/index.css:258:  textarea.bg-smoked-card:focus-visible
+src/index.css:260:  box-shadow:
+src/index.css:288:  box-shadow: var(--shadow-physical);
+src/index.css:436::focus-visible {
+src/layouts/BottomNav.tsx:21:              'flex min-w-16 flex-1 items-center justify-center rounded-control px-2 py-3 text-xs font-semibold transition-[box-shadow,transform,color] duration-200',
+src/layouts/PublicLayout.tsx:28:          'transition-[box-shadow,transform,color] duration-200 ease-cathedral',
+src/layouts/PublicLayout.tsx:51:            className="shrink-0 rounded-control bg-smoked-card p-2 shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/layouts/PublicLayout.tsx:76:            className="hidden min-h-11 items-center justify-center rounded-control bg-smoked-ember px-5 py-3 text-sm font-bold tracking-[0.01em] text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember md:inline-flex"
+src/pages/auth/Login.tsx:144:              className="inline-flex min-h-12 w-full items-center justify-center rounded-control bg-smoked-ember px-5 py-3 text-sm font-bold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/auth/Signup.tsx:236:              className="inline-flex min-h-12 w-full items-center justify-center rounded-control bg-smoked-ember px-5 py-3 text-sm font-bold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/dashboard/Dashboard.tsx:115:                  className="rounded-card bg-smoked-card p-6 shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover"
+src/pages/dashboard/DashboardModules.tsx:116:      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-control bg-smoked-ember px-5 py-3 text-sm font-bold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/dashboard/DashboardModules.tsx:515:    <article className="rounded-card bg-smoked-card p-6 shadow-raised transition-[box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:shadow-raised-hover">
+src/pages/NotFound.tsx:14:          className="mt-8 inline-flex w-fit rounded-control bg-smoked-card px-6 py-3 font-semibold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0 active:shadow-pressed"
+src/pages/public/Contact.tsx:48:      className="inline-flex min-h-12 items-center justify-center gap-3 rounded-control bg-smoked-card px-6 py-3 text-sm font-semibold text-text-on-card-primary shadow-raised transition-[box-shadow,transform,color] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/pages/public/Contact.tsx:118:                className="rounded-card bg-smoked-card p-7 shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover md:p-8"
+src/pages/public/Contact.tsx:234:                className="inline-flex min-h-14 items-center justify-center gap-3 rounded-control bg-smoked-card px-6 py-3 text-sm font-semibold text-text-on-card-primary shadow-raised transition-[box-shadow,transform,color] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/pages/public/Contact.tsx:294:              className="mt-7 inline-flex min-h-11 items-center gap-2 rounded-control bg-smoked-card px-5 py-3 text-sm font-semibold text-text-on-card-primary shadow-pressed transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised active:translate-y-0.5 active:shadow-pressed"
+src/pages/public/Contact.tsx:317:              className="mt-7 inline-flex min-h-11 items-center gap-2 rounded-control bg-smoked-card px-5 py-3 text-sm font-semibold text-text-on-card-primary shadow-pressed transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised active:translate-y-0.5 active:shadow-pressed"
+src/pages/public/Courses.tsx:145:        'text-sm font-semibold transition-[box-shadow,transform,color] duration-200 ease-cathedral',
+src/pages/public/Home.tsx:22:    'inline-flex min-h-12 items-center justify-center gap-3 rounded-control px-6 py-3.5 text-sm font-semibold transition-[box-shadow,transform,color] duration-200 ease-cathedral focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember active:translate-y-0.5'
+src/pages/public/Home.tsx:109:    <article className="group rounded-card bg-smoked-card p-6 shadow-physical transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-1 hover:shadow-float">
+src/pages/public/Home.tsx:226:                  className="inline-flex items-center gap-3 rounded-control bg-smoked-card px-5 py-3 text-sm font-semibold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/pages/public/Instructors.tsx:84:      className="inline-flex min-h-12 items-center justify-center gap-3 rounded-control bg-smoked-card px-6 py-3 text-sm font-semibold text-text-on-card-primary shadow-raised transition-[box-shadow,transform,color] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/pages/public/OurStory.tsx:95:      className="inline-flex min-h-12 items-center justify-center gap-3 rounded-control bg-smoked-card px-6 py-3 text-sm font-semibold text-text-on-card-primary shadow-raised transition-[box-shadow,transform,color] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/pages/public/OurStory.tsx:302:              className="grid gap-6 rounded-card bg-smoked-card p-6 shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover md:grid-cols-[7rem_1fr] md:p-8"
+src/pages/public/OurStory.tsx:550:              className="inline-flex min-h-12 items-center justify-center rounded-control bg-smoked-card px-6 py-3 text-sm font-semibold text-text-on-card-primary shadow-pressed transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised active:translate-y-0.5 active:shadow-pressed"
+src/pages/public/VerticalSeries.tsx:27:      className="inline-flex min-h-12 items-center justify-center gap-3 rounded-control bg-smoked-card px-6 py-3 text-sm font-semibold text-text-on-card-primary shadow-raised transition-[box-shadow,transform,color] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/pages/public/VerticalSeries.tsx:37:    <article className="group rounded-card bg-smoked-card p-4 shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover">
+src/pages/public/VerticalSeries.tsx:40:          <div className="flex h-16 w-16 items-center justify-center rounded-card bg-smoked-card shadow-pressed transition-[box-shadow,transform] duration-200 ease-cathedral group-hover:-translate-y-0.5 group-hover:shadow-raised">
+src/pages/public/VerticalSeries.tsx:205:                className="rounded-control bg-smoked-card px-4 py-2 text-xs font-semibold text-text-on-card-primary shadow-pressed transition-[box-shadow,transform] duration-200 ease-cathedral hover:shadow-raised active:translate-y-0.5 active:shadow-pressed"
+src/pages/public/VerticalSeries.tsx:206:                onClick={() => setSearch('')}
+src/pages/public/VerticalSeries.tsx:262:              className="mt-7 inline-flex min-h-12 items-center justify-center rounded-control bg-smoked-card px-6 py-3 text-sm font-semibold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+src/pages/public/VerticalSeries.tsx:263:              onClick={() => setSearch('')}
+
+=== 7. ACCESSIBILITY AND SEMANTIC HTML ===
+src/components/auth/ProtectedRoute.tsx:12:      <main className="flex min-h-screen items-center justify-center bg-smoked-powder px-6 text-text-on-substrate-primary">
+src/components/layout/DashboardLayout.tsx:17:            <main className="min-w-0 px-4 py-6 md:px-6 md:py-8">
+src/components/layout/LeftRail.tsx:20:    <aside className="hidden w-60 shrink-0 border-r border-smoked-shadow/30 lg:block">
+src/components/layout/LeftRail.tsx:29:        <nav aria-label="Dashboard navigation" className="space-y-1">
+src/components/layout/PublicLayout.tsx:29:          'focus-visible:outline-3 focus-visible:outline-offset-3',
+src/components/layout/PublicLayout.tsx:30:          'focus-visible:outline-smoked-ember',
+src/components/layout/PublicLayout.tsx:47:      <header className="sticky top-0 z-50 w-full border-b border-smoked-shadow/30 bg-smoked-powder shadow-raised">
+src/components/layout/PublicLayout.tsx:50:            aria-label="CUCO home"
+src/components/layout/PublicLayout.tsx:55:              alt="CUCO"
+src/components/layout/PublicLayout.tsx:61:          <nav
+src/components/layout/PublicLayout.tsx:62:            aria-label="Primary navigation"
+src/components/layout/PublicLayout.tsx:75:            className="hidden min-h-11 items-center justify-center rounded-control bg-smoked-ember px-5 py-3 text-sm font-bold tracking-[0.01em] text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/components/layout/PublicLayout.tsx:83:      <main className="relative z-10 min-h-[calc(100svh-80px)] pb-24 md:pb-0">
+src/components/layout/RightRail.tsx:21:    <section className="rounded-card bg-smoked-card p-4 text-text-on-card-primary shadow-raised">
+src/components/layout/RightRail.tsx:24:          <Icon aria-hidden="true" className="size-4" />
+src/components/layout/RightRail.tsx:61:    <aside className="hidden w-80 shrink-0 border-l border-smoked-shadow/30 xl:block">
+src/components/layout/RightRail.tsx:67:            <button
+src/components/layout/SiteFooter.tsx:60:    <footer className="relative z-10 mt-16 border-t border-smoked-shadow/20 bg-smoked-powder">
+src/components/layout/SiteFooter.tsx:63:          <section aria-labelledby="footer-identity">
+src/components/layout/SiteFooter.tsx:72:              aria-label="CUCO home"
+src/components/layout/SiteFooter.tsx:77:                alt="CUCO"
+src/components/layout/SiteFooter.tsx:83:            <h2 className="cuco-editorial mt-5 max-w-xs text-2xl font-semibold leading-tight text-text-on-substrate-primary">
+src/components/layout/SiteFooter.tsx:89:          <section aria-labelledby="footer-menu">
+src/components/layout/SiteFooter.tsx:97:            <nav
+src/components/layout/SiteFooter.tsx:98:              aria-label="Footer navigation"
+src/components/layout/SiteFooter.tsx:111:          <section aria-labelledby="footer-address">
+src/components/layout/SiteFooter.tsx:132:          <section aria-labelledby="footer-social">
+src/components/layout/SiteFooter.tsx:144:                  aria-label={label}
+src/components/layout/SiteFooter.tsx:153:                  <Icon aria-hidden="true" className="size-5" />
+src/components/layout/TopBar.tsx:36:    <header className="sticky top-0 z-30 h-14 border-b border-smoked-shadow/30 bg-smoked-powder md:h-16">
+src/components/layout/TopBar.tsx:39:          aria-label="CUCO home"
+src/components/layout/TopBar.tsx:44:            alt="CUCO"
+src/components/layout/TopBar.tsx:60:        <label className="relative hidden min-w-0 max-w-sm flex-1 lg:block">
+src/components/layout/TopBar.tsx:64:            aria-hidden="true"
+src/components/layout/TopBar.tsx:69:            className="h-10 w-full rounded-control bg-smoked-card pl-9 pr-3 text-sm text-text-on-card-primary shadow-pressed outline-none transition-[box-shadow] duration-200 placeholder:text-text-on-card-secondary focus-visible:shadow-contact"
+src/components/layout/TopBar.tsx:75:        <button
+src/components/layout/TopBar.tsx:76:          aria-label="Notifications"
+src/components/layout/TopBar.tsx:77:          className="inline-flex size-10 shrink-0 items-center justify-center rounded-control bg-smoked-card text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 hover:-translate-y-px hover:shadow-raised-hover active:translate-y-px active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-smoked-ember"
+src/components/layout/TopBar.tsx:80:          <Bell aria-hidden="true" className="size-4" />
+src/components/layout/TopBar.tsx:85:            aria-label={
+src/components/layout/TopBar.tsx:94:                alt={`${displayName} profile`}
+src/components/layout/TopBar.tsx:100:                alt="CUCO profile image placeholder"
+src/components/layout/TopBar.tsx:118:            <button
+src/components/layout/TopBar.tsx:119:              aria-label="Sign out"
+src/components/layout/TopBar.tsx:120:              className="hidden size-10 shrink-0 items-center justify-center rounded-control bg-smoked-card text-text-on-card-primary shadow-raised transition-[box-shadow,transform,color] duration-200 hover:-translate-y-px hover:shadow-raised-hover active:translate-y-px active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-smoked-ember lg:inline-flex"
+src/components/layout/TopBar.tsx:124:              <LogOut aria-hidden="true" className="size-4" />
+src/components/layout/TopBar.tsx:128:              aria-hidden="true"
+src/layouts/BottomNav.tsx:12:    <nav
+src/layouts/BottomNav.tsx:13:      aria-label="Mobile navigation"
+src/layouts/PublicLayout.tsx:29:          'focus-visible:outline-3 focus-visible:outline-offset-3',
+src/layouts/PublicLayout.tsx:30:          'focus-visible:outline-smoked-ember',
+src/layouts/PublicLayout.tsx:47:      <header className="sticky top-0 z-50 w-full border-b border-smoked-shadow/30 bg-smoked-powder shadow-raised">
+src/layouts/PublicLayout.tsx:50:            aria-label="CUCO home"
+src/layouts/PublicLayout.tsx:55:              alt="CUCO"
+src/layouts/PublicLayout.tsx:61:          <nav
+src/layouts/PublicLayout.tsx:62:            aria-label="Primary navigation"
+src/layouts/PublicLayout.tsx:75:            aria-label="Enter CUCO dashboard"
+src/layouts/PublicLayout.tsx:76:            className="hidden min-h-11 items-center justify-center rounded-control bg-smoked-ember px-5 py-3 text-sm font-bold tracking-[0.01em] text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember md:inline-flex"
+src/layouts/PublicLayout.tsx:84:      <main className="relative z-10 min-h-[calc(100svh-80px)] pb-24 md:pb-0">
+src/pages/auth/Login.tsx:66:    <main className="min-h-[calc(100vh-5rem)] bg-smoked-powder px-4 py-12 md:px-6 md:py-20">
+src/pages/auth/Login.tsx:68:        <section className="rounded-card bg-smoked-card p-6 shadow-raised md:p-10">
+src/pages/auth/Login.tsx:73:          <h1 className="cuco-editorial mt-3 text-4xl leading-none text-text-on-card-primary md:text-5xl">
+src/pages/auth/Login.tsx:102:              <label
+src/pages/auth/Login.tsx:104:                htmlFor="login-email"
+src/pages/auth/Login.tsx:111:                className="mt-2 h-12 w-full rounded-control bg-smoked-card px-4 text-sm text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:shadow-contact"
+src/pages/auth/Login.tsx:123:              <label
+src/pages/auth/Login.tsx:125:                htmlFor="login-password"
+src/pages/auth/Login.tsx:132:                className="mt-2 h-12 w-full rounded-control bg-smoked-card px-4 text-sm text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:shadow-contact"
+src/pages/auth/Login.tsx:143:            <button
+src/pages/auth/Login.tsx:144:              className="inline-flex min-h-12 w-full items-center justify-center rounded-control bg-smoked-ember px-5 py-3 text-sm font-bold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/auth/Signup.tsx:97:    <main className="min-h-[calc(100vh-5rem)] bg-smoked-powder px-4 py-12 md:px-6 md:py-20">
+src/pages/auth/Signup.tsx:99:        <section className="rounded-card bg-smoked-card p-6 shadow-raised md:p-10">
+src/pages/auth/Signup.tsx:104:          <h1 className="cuco-editorial mt-3 text-4xl leading-none text-text-on-card-primary md:text-5xl">
+src/pages/auth/Signup.tsx:148:              <label
+src/pages/auth/Signup.tsx:150:                htmlFor="signup-name"
+src/pages/auth/Signup.tsx:157:                className="mt-2 h-12 w-full rounded-control bg-smoked-card px-4 text-sm text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:shadow-contact"
+src/pages/auth/Signup.tsx:169:              <label
+src/pages/auth/Signup.tsx:171:                htmlFor="signup-email"
+src/pages/auth/Signup.tsx:178:                className="mt-2 h-12 w-full rounded-control bg-smoked-card px-4 text-sm text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:shadow-contact"
+src/pages/auth/Signup.tsx:190:              <label
+src/pages/auth/Signup.tsx:192:                htmlFor="signup-password"
+src/pages/auth/Signup.tsx:199:                className="mt-2 h-12 w-full rounded-control bg-smoked-card px-4 text-sm text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:shadow-contact"
+src/pages/auth/Signup.tsx:212:              <label
+src/pages/auth/Signup.tsx:214:                htmlFor="signup-confirm-password"
+src/pages/auth/Signup.tsx:221:                className="mt-2 h-12 w-full rounded-control bg-smoked-card px-4 text-sm text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:shadow-contact"
+src/pages/auth/Signup.tsx:235:            <button
+src/pages/auth/Signup.tsx:236:              className="inline-flex min-h-12 w-full items-center justify-center rounded-control bg-smoked-ember px-5 py-3 text-sm font-bold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/dashboard/Dashboard.tsx:40:    <section className="space-y-8">
+src/pages/dashboard/Dashboard.tsx:41:      <header>
+src/pages/dashboard/Dashboard.tsx:46:        <h1 className="cuco-editorial mt-3 text-5xl leading-none text-text-on-substrate-primary md:text-6xl">
+src/pages/dashboard/Dashboard.tsx:69:      <section
+src/pages/dashboard/Dashboard.tsx:70:        aria-labelledby="enrolment-heading"
+src/pages/dashboard/Dashboard.tsx:78:          <h2
+src/pages/dashboard/Dashboard.tsx:98:            <h3 className="cuco-editorial mt-2 text-2xl text-text-on-card-primary">
+src/pages/dashboard/Dashboard.tsx:113:                <article
+src/pages/dashboard/Dashboard.tsx:123:                      <h3 className="cuco-editorial mt-2 text-3xl leading-tight text-text-on-card-primary">
+src/pages/dashboard/Dashboard.tsx:179:      <section className="grid gap-5 md:grid-cols-3">
+src/pages/dashboard/Dashboard.tsx:180:        <article className="rounded-card bg-smoked-card p-6 shadow-raised">
+src/pages/dashboard/Dashboard.tsx:194:        <article className="rounded-card bg-smoked-card p-6 shadow-raised">
+src/pages/dashboard/Dashboard.tsx:208:        <article className="rounded-card bg-smoked-card p-6 shadow-raised">
+src/pages/dashboard/DashboardModules.tsx:35:    <section className="space-y-8">
+src/pages/dashboard/DashboardModules.tsx:36:      <header className="max-w-4xl">
+src/pages/dashboard/DashboardModules.tsx:39:            <Icon aria-hidden="true" className="size-6" />
+src/pages/dashboard/DashboardModules.tsx:47:            <h1 className="cuco-editorial mt-3 text-5xl leading-none text-text-on-substrate-primary md:text-6xl">
+src/pages/dashboard/DashboardModules.tsx:71:    <section className="rounded-card bg-smoked-card p-6 shadow-raised">
+src/pages/dashboard/DashboardModules.tsx:96:      <h2 className="cuco-editorial mt-3 text-3xl text-text-on-card-primary">
+src/pages/dashboard/DashboardModules.tsx:115:    <button
+src/pages/dashboard/DashboardModules.tsx:116:      className="inline-flex min-h-11 items-center justify-center gap-2 rounded-control bg-smoked-ember px-5 py-3 text-sm font-bold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/dashboard/DashboardModules.tsx:119:      <Icon aria-hidden="true" className="size-4" />
+src/pages/dashboard/DashboardModules.tsx:251:          className="min-h-44 w-full resize-y rounded-control bg-smoked-card p-4 text-sm leading-6 text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:shadow-contact"
+src/pages/dashboard/DashboardModules.tsx:365:          className="min-h-36 w-full resize-y rounded-control bg-smoked-card p-4 text-sm leading-6 text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:shadow-contact"
+src/pages/dashboard/DashboardModules.tsx:461:            <ShieldCheck aria-hidden="true" className="size-4" />
+src/pages/dashboard/DashboardModules.tsx:489:          aria-hidden="true"
+src/pages/dashboard/DashboardModules.tsx:515:    <article className="rounded-card bg-smoked-card p-6 shadow-raised transition-[box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:shadow-raised-hover">
+src/pages/dashboard/DashboardModules.tsx:517:        <Icon aria-hidden="true" className="size-5 text-text-on-card-primary" />
+src/pages/dashboard/DashboardModules.tsx:520:      <h2 className="cuco-editorial mt-5 text-2xl text-text-on-card-primary">
+src/pages/dashboard/DashboardModules.tsx:541:    <article className="rounded-card bg-smoked-card p-6 shadow-raised">
+src/pages/dashboard/DashboardModules.tsx:561:        aria-hidden="true"
+src/pages/NotFound.tsx:5:    <main className="min-h-screen">
+src/pages/NotFound.tsx:9:        <h1 className="cuco-editorial mt-4 text-5xl">
+src/pages/public/Contact.tsx:63:      <section className="cuco-shell py-16 md:py-24 lg:py-32">
+src/pages/public/Contact.tsx:70:            <h1 className="cuco-editorial mt-5 max-w-5xl text-6xl leading-[0.84] text-text-on-substrate-primary sm:text-7xl md:text-8xl lg:text-9xl">
+src/pages/public/Contact.tsx:87:                aria-hidden="true"
+src/pages/public/Contact.tsx:96:            <h2 className="cuco-editorial mt-3 text-4xl leading-none text-text-on-card-primary">
+src/pages/public/Contact.tsx:102:                aria-hidden="true"
+src/pages/public/Contact.tsx:111:      <section className="cuco-shell pb-16 md:pb-24">
+src/pages/public/Contact.tsx:117:              <article
+src/pages/public/Contact.tsx:125:                        aria-hidden="true"
+src/pages/public/Contact.tsx:132:                        aria-hidden="true"
+src/pages/public/Contact.tsx:143:                <h2 className="cuco-editorial mt-8 break-words text-3xl leading-none text-text-on-card-primary md:text-4xl">
+src/pages/public/Contact.tsx:156:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/Contact.tsx:163:            <h2 className="cuco-editorial mt-4 text-5xl leading-[0.9] text-text-on-substrate-primary md:text-7xl">
+src/pages/public/Contact.tsx:182:              <label className="block">
+src/pages/public/Contact.tsx:188:                  className="mt-3 h-14 w-full rounded-control bg-smoked-card px-5 text-sm text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/public/Contact.tsx:195:              <label className="block">
+src/pages/public/Contact.tsx:201:                  className="mt-3 h-14 w-full rounded-control bg-smoked-card px-5 text-sm text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/public/Contact.tsx:208:              <label className="block">
+src/pages/public/Contact.tsx:214:                  className="mt-3 h-14 w-full rounded-control bg-smoked-card px-5 text-sm text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/public/Contact.tsx:221:              <label className="block">
+src/pages/public/Contact.tsx:227:                  className="mt-3 min-h-44 w-full resize-y rounded-control bg-smoked-card px-5 py-4 text-sm leading-7 text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/public/Contact.tsx:233:              <button
+src/pages/public/Contact.tsx:238:                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+src/pages/public/Contact.tsx:251:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/Contact.tsx:259:              <h2 className="cuco-editorial mt-5 max-w-4xl text-5xl leading-[0.9] text-text-on-card-primary md:text-7xl">
+src/pages/public/Contact.tsx:271:              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+src/pages/public/Contact.tsx:277:      <section className="cuco-shell pb-24 pt-8 md:pb-32">
+src/pages/public/Contact.tsx:284:            <h2 className="cuco-editorial mt-4 text-4xl leading-none text-text-on-card-primary">
+src/pages/public/Contact.tsx:298:              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+src/pages/public/Contact.tsx:307:            <h2 className="cuco-editorial mt-4 text-4xl leading-none text-text-on-card-primary">
+src/pages/public/Contact.tsx:321:              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+src/pages/public/Courses.tsx:160:    <main className="overflow-hidden">
+src/pages/public/Courses.tsx:162:      <section className="border-b border-smoked-shadow/20">
+src/pages/public/Courses.tsx:169:            <h1 className="cuco-editorial mt-7 text-6xl font-semibold leading-[0.86] tracking-[-0.035em] sm:text-7xl lg:text-[7rem]">
+src/pages/public/Courses.tsx:207:      <section className="border-b border-smoked-shadow/20">
+src/pages/public/Courses.tsx:224:                <h2 className="cuco-editorial mt-7 text-5xl font-semibold leading-[0.88] text-text-on-card-primary md:text-7xl">
+src/pages/public/Courses.tsx:319:      <section className="border-b border-smoked-shadow/20">
+src/pages/public/Courses.tsx:327:              <h2 className="cuco-editorial mt-5 text-5xl font-semibold leading-[0.9] md:text-6xl">
+src/pages/public/Courses.tsx:338:                <article
+src/pages/public/Courses.tsx:346:                  <h3 className="cuco-editorial text-3xl font-semibold leading-none md:text-4xl">
+src/pages/public/Courses.tsx:361:      <section className="border-b border-smoked-shadow/20">
+src/pages/public/Courses.tsx:371:              <h2 className="cuco-editorial mt-5 text-4xl font-semibold leading-none text-text-on-card-primary md:text-5xl">
+src/pages/public/Courses.tsx:390:              <h2 className="cuco-editorial mt-5 text-5xl font-semibold leading-[0.9] md:text-6xl">
+src/pages/public/Courses.tsx:407:      <section className="border-b border-smoked-shadow/20">
+src/pages/public/Courses.tsx:414:            <h2 className="cuco-editorial mt-5 text-5xl font-semibold leading-none md:text-6xl">
+src/pages/public/Courses.tsx:423:              <article
+src/pages/public/Courses.tsx:475:      <section className="border-b border-smoked-shadow/20">
+src/pages/public/Courses.tsx:483:              <h2 className="cuco-editorial mt-5 text-5xl font-semibold leading-[0.9] md:text-6xl">
+src/pages/public/Courses.tsx:538:      <section className="border-b border-smoked-shadow/20">
+src/pages/public/Courses.tsx:545:            <h2 className="cuco-editorial mt-5 text-5xl font-semibold leading-none md:text-6xl">
+src/pages/public/Courses.tsx:559:            <article className="rounded-card bg-smoked-card p-7 shadow-raised">
+src/pages/public/Courses.tsx:564:              <h3 className="cuco-editorial mt-8 text-4xl font-semibold">
+src/pages/public/Courses.tsx:578:            <article className="rounded-card bg-smoked-card p-7 shadow-raised">
+src/pages/public/Courses.tsx:583:              <h3 className="cuco-editorial mt-8 text-4xl font-semibold">
+src/pages/public/Courses.tsx:597:            <article className="rounded-card bg-smoked-card p-7 shadow-raised">
+src/pages/public/Courses.tsx:602:              <h3 className="cuco-editorial mt-8 text-4xl font-semibold">
+src/pages/public/Courses.tsx:620:      <section className="border-b border-smoked-shadow/20">
+src/pages/public/Courses.tsx:628:              <h2 className="cuco-editorial mt-5 text-5xl font-semibold leading-[0.9] md:text-6xl">
+src/pages/public/Courses.tsx:687:      <section className="border-b border-smoked-shadow/20">
+src/pages/public/Courses.tsx:694:            <h2 className="cuco-editorial mt-5 text-5xl font-semibold leading-none md:text-6xl">
+src/pages/public/Courses.tsx:716:              <article
+src/pages/public/Courses.tsx:728:                <h3 className="cuco-editorial mt-3 text-3xl font-semibold">
+src/pages/public/Courses.tsx:738:      <section>
+src/pages/public/Courses.tsx:745:            <h2 className="cuco-editorial mt-5 text-5xl font-semibold leading-none md:text-6xl">
+src/pages/public/Courses.tsx:762:                <article
+src/pages/public/Courses.tsx:780:                  <h3 className="cuco-editorial mt-4 text-4xl font-semibold leading-none">
+src/pages/public/Home.tsx:22:    'inline-flex min-h-12 items-center justify-center gap-3 rounded-control px-6 py-3.5 text-sm font-semibold transition-[box-shadow,transform,color] duration-200 ease-cathedral focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember active:translate-y-0.5'
+src/pages/public/Home.tsx:54:      aria-label={`${label} image`}
+src/pages/public/Home.tsx:61:      role="img"
+src/pages/public/Home.tsx:67:              alt={label}
+src/pages/public/Home.tsx:80:                aria-hidden="true"
+src/pages/public/Home.tsx:109:    <article className="group rounded-card bg-smoked-card p-6 shadow-physical transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-1 hover:shadow-float">
+src/pages/public/Home.tsx:116:          aria-hidden="true"
+src/pages/public/Home.tsx:121:      <h3 className="cuco-editorial mt-10 text-3xl text-text-on-card-primary md:text-4xl">
+src/pages/public/Home.tsx:136:      <section className="cuco-shell relative py-12 md:py-20 lg:py-24">
+src/pages/public/Home.tsx:147:            <h1 className="cuco-editorial mt-8 max-w-5xl text-6xl leading-[0.84] text-text-on-substrate-primary sm:text-7xl md:text-8xl lg:text-[7.5rem]">
+src/pages/public/Home.tsx:166:                <ArrowRight aria-hidden="true" className="h-5 w-5" />
+src/pages/public/Home.tsx:176:                aria-hidden="true"
+src/pages/public/Home.tsx:194:      <section className="border-y border-smoked-shadow/20 bg-smoked-card/40">
+src/pages/public/Home.tsx:202:              <h2 className="cuco-editorial mt-4 text-5xl leading-[0.9] text-text-on-substrate-primary md:text-6xl">
+src/pages/public/Home.tsx:230:                  <ArrowRight aria-hidden="true" className="h-4 w-4" />
+src/pages/public/Home.tsx:239:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/Home.tsx:252:              <h2 className="cuco-editorial mt-5 text-5xl leading-[0.9] text-text-on-card-primary md:text-6xl">
+src/pages/public/Home.tsx:270:                  aria-hidden="true"
+src/pages/public/Home.tsx:284:      <section className="bg-smoked-card/35 py-16 md:py-24">
+src/pages/public/Home.tsx:292:              <h2 className="cuco-editorial mt-4 max-w-3xl text-5xl leading-[0.9] text-text-on-substrate-primary md:text-7xl">
+src/pages/public/Home.tsx:340:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/Home.tsx:354:              <h2 className="cuco-editorial mt-7 text-6xl leading-[0.85] text-text-on-card-primary md:text-8xl">
+src/pages/public/Home.tsx:376:                  <ArrowRight aria-hidden="true" className="h-5 w-5" />
+src/pages/public/Home.tsx:385:                    aria-hidden="true"
+src/pages/public/Home.tsx:404:                    aria-hidden="true"
+src/pages/public/Home.tsx:423:                    aria-hidden="true"
+src/pages/public/Home.tsx:446:      <section className="cuco-shell pb-16 md:pb-24">
+src/pages/public/Home.tsx:452:                  aria-hidden="true"
+src/pages/public/Home.tsx:463:              <h2 className="cuco-editorial text-5xl leading-[0.9] text-text-on-card-primary md:text-7xl">
+src/pages/public/Home.tsx:479:                  <ArrowRight aria-hidden="true" className="h-5 w-5" />
+src/pages/public/Home.tsx:488:      <section className="border-t border-smoked-shadow/20">
+src/pages/public/Home.tsx:494:          <h2 className="cuco-editorial mx-auto mt-5 max-w-5xl text-6xl leading-[0.82] text-text-on-substrate-primary md:text-8xl lg:text-[9rem]">
+src/pages/public/Home.tsx:503:              <ArrowRight aria-hidden="true" className="h-5 w-5" />
+src/pages/public/Instructors.tsx:102:    <article className="overflow-hidden rounded-card bg-smoked-card shadow-float">
+src/pages/public/Instructors.tsx:108:                aria-hidden="true"
+src/pages/public/Instructors.tsx:123:            <h2 className="cuco-editorial mt-4 text-5xl leading-[0.9] text-text-on-card-primary md:text-6xl">
+src/pages/public/Instructors.tsx:161:                    aria-hidden="true"
+src/pages/public/Instructors.tsx:178:      <section className="cuco-shell py-16 md:py-24 lg:py-32">
+src/pages/public/Instructors.tsx:184:          <h1 className="cuco-editorial mt-5 max-w-5xl text-6xl leading-[0.86] text-text-on-substrate-primary sm:text-7xl md:text-8xl lg:text-9xl">
+src/pages/public/Instructors.tsx:202:              aria-hidden="true"
+src/pages/public/Instructors.tsx:216:              aria-hidden="true"
+src/pages/public/Instructors.tsx:230:              aria-hidden="true"
+src/pages/public/Instructors.tsx:244:      <section className="cuco-shell pb-16 md:pb-24">
+src/pages/public/Instructors.tsx:250:          <h2 className="cuco-editorial mt-3 text-4xl leading-[0.95] text-text-on-substrate-primary md:text-5xl">
+src/pages/public/Instructors.tsx:268:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/Instructors.tsx:292:              <h3 className="cuco-editorial mt-6 text-3xl leading-none text-text-on-card-primary">
+src/pages/public/Instructors.tsx:304:      <section className="cuco-shell pb-24 pt-8 md:pb-32">
+src/pages/public/Instructors.tsx:312:              <h2 className="cuco-editorial mt-5 max-w-4xl text-5xl leading-[0.9] text-text-on-card-primary md:text-7xl">
+src/pages/public/Instructors.tsx:326:              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+src/pages/public/OurStory.tsx:113:      <h2 className="cuco-editorial mt-3 text-4xl leading-[0.98] text-text-on-substrate-primary md:text-5xl">
+src/pages/public/OurStory.tsx:123:      <section className="cuco-shell relative py-16 md:py-24 lg:py-32">
+src/pages/public/OurStory.tsx:129:          <h1 className="cuco-editorial mt-5 max-w-5xl text-6xl leading-[0.88] text-text-on-substrate-primary sm:text-7xl md:text-8xl lg:text-9xl">
+src/pages/public/OurStory.tsx:144:              aria-hidden="true"
+src/pages/public/OurStory.tsx:158:              aria-hidden="true"
+src/pages/public/OurStory.tsx:170:            <Film aria-hidden="true" className="h-7 w-7 text-smoked-ember" />
+src/pages/public/OurStory.tsx:182:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/OurStory.tsx:209:                aria-hidden="true"
+src/pages/public/OurStory.tsx:221:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/OurStory.tsx:229:              <h2 className="cuco-editorial mt-4 text-4xl leading-none text-text-on-card-primary md:text-5xl">
+src/pages/public/OurStory.tsx:235:                  aria-hidden="true"
+src/pages/public/OurStory.tsx:261:                    aria-hidden="true"
+src/pages/public/OurStory.tsx:276:                    aria-hidden="true"
+src/pages/public/OurStory.tsx:293:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/OurStory.tsx:301:            <article
+src/pages/public/OurStory.tsx:315:                <h3 className="cuco-editorial text-3xl leading-none text-text-on-card-primary md:text-4xl">
+src/pages/public/OurStory.tsx:340:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/OurStory.tsx:343:            <article
+src/pages/public/OurStory.tsx:348:                aria-hidden="true"
+src/pages/public/OurStory.tsx:356:              <h2 className="cuco-editorial mt-3 text-3xl leading-tight text-text-on-card-primary">
+src/pages/public/OurStory.tsx:375:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/OurStory.tsx:435:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/OurStory.tsx:442:            <h2 className="cuco-editorial mt-5 text-5xl leading-[0.92] text-text-on-card-primary md:text-7xl">
+src/pages/public/OurStory.tsx:471:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/OurStory.tsx:478:            <h2 className="cuco-editorial mt-4 text-5xl leading-[0.92] text-text-on-substrate-primary md:text-7xl">
+src/pages/public/OurStory.tsx:494:                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+src/pages/public/OurStory.tsx:528:      <section className="cuco-shell pb-24 pt-8 md:pb-32">
+src/pages/public/OurStory.tsx:534:          <h2 className="cuco-editorial mx-auto mt-5 max-w-4xl text-5xl leading-[0.92] text-text-on-card-primary md:text-7xl">
+src/pages/public/OurStory.tsx:546:              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+src/pages/public/VerticalSeries.tsx:37:    <article className="group rounded-card bg-smoked-card p-4 shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover">
+src/pages/public/VerticalSeries.tsx:42:              aria-hidden="true"
+src/pages/public/VerticalSeries.tsx:67:          <h2 className="cuco-editorial mt-2 text-2xl leading-none text-text-on-card-primary">
+src/pages/public/VerticalSeries.tsx:74:            aria-hidden="true"
+src/pages/public/VerticalSeries.tsx:103:      <section className="cuco-shell py-16 md:py-24 lg:py-32">
+src/pages/public/VerticalSeries.tsx:110:            <h1 className="cuco-editorial mt-5 max-w-5xl text-6xl leading-[0.84] text-text-on-substrate-primary sm:text-7xl md:text-8xl lg:text-9xl">
+src/pages/public/VerticalSeries.tsx:129:                  aria-hidden="true"
+src/pages/public/VerticalSeries.tsx:151:      <section className="cuco-shell pb-16 md:pb-24">
+src/pages/public/VerticalSeries.tsx:154:            <label className="relative block">
+src/pages/public/VerticalSeries.tsx:158:                aria-hidden="true"
+src/pages/public/VerticalSeries.tsx:163:                aria-label="Search vertical series"
+src/pages/public/VerticalSeries.tsx:164:                className="h-14 w-full rounded-control bg-smoked-card pl-14 pr-5 text-sm text-text-on-card-primary shadow-pressed outline-none placeholder:text-text-on-card-secondary focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/public/VerticalSeries.tsx:172:            <label className="relative block lg:w-64">
+src/pages/public/VerticalSeries.tsx:176:                aria-label="Filter vertical series"
+src/pages/public/VerticalSeries.tsx:177:                className="h-14 w-full appearance-none rounded-control bg-smoked-card px-5 pr-12 text-sm font-semibold text-text-on-card-primary shadow-pressed outline-none focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+src/pages/public/VerticalSeries.tsx:185:                aria-hidden="true"
+src/pages/public/VerticalSeries.tsx:194:                aria-hidden="true"
+src/pages/public/VerticalSeries.tsx:204:              <button
+src/pages/public/VerticalSeries.tsx:216:      <section className="cuco-shell pb-16 md:pb-24">
+src/pages/public/VerticalSeries.tsx:223:            <h2 className="cuco-editorial mt-3 text-4xl leading-[0.95] text-text-on-substrate-primary md:text-5xl">
+src/pages/public/VerticalSeries.tsx:249:              aria-hidden="true"
+src/pages/public/VerticalSeries.tsx:253:            <h2 className="cuco-editorial mt-6 text-4xl text-text-on-card-primary">
+src/pages/public/VerticalSeries.tsx:261:            <button
+src/pages/public/VerticalSeries.tsx:272:      <section className="cuco-shell py-16 md:py-24">
+src/pages/public/VerticalSeries.tsx:279:            <h3 className="cuco-editorial mt-6 text-3xl leading-none text-text-on-card-primary">
+src/pages/public/VerticalSeries.tsx:293:            <h3 className="cuco-editorial mt-6 text-3xl leading-none text-text-on-card-primary">
+src/pages/public/VerticalSeries.tsx:308:            <h3 className="cuco-editorial mt-6 text-3xl leading-none text-text-on-card-primary">
+src/pages/public/VerticalSeries.tsx:320:      <section className="cuco-shell pb-24 pt-8 md:pb-32">
+src/pages/public/VerticalSeries.tsx:328:              <h2 className="cuco-editorial mt-5 max-w-4xl text-5xl leading-[0.9] text-text-on-card-primary md:text-7xl">
+src/pages/public/VerticalSeries.tsx:342:              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+
+=== 8. RESPONSIVE RECOMPOSITION ===
+src/components/layout/DashboardLayout.tsx:10:      <div className="mx-auto flex min-h-screen max-w-[1600px]">
+src/components/layout/SiteFooter.tsx:140:            <div className="mt-5 flex flex-wrap gap-3">
+src/index.css:41:  --breakpoint-xs: 520px;
+src/index.css:42:  --breakpoint-sm: 600px;
+src/index.css:43:  --breakpoint-md: 760px;
+src/index.css:44:  --breakpoint-lg: 800px;
+src/index.css:45:  --breakpoint-xl: 900px;
+src/index.css:46:  --breakpoint-2xl: 1050px;
+src/index.css:459:@media (prefers-reduced-motion: reduce) {
+src/pages/dashboard/Dashboard.tsx:117:                  <div className="flex flex-wrap items-start justify-between gap-3">
+src/pages/dashboard/DashboardModules.tsx:136:            <div className="flex flex-wrap items-start justify-between gap-4">
+src/pages/public/Courses.tsx:183:            <div className="mt-9 flex flex-wrap gap-3">
+src/pages/public/Courses.tsx:212:                <div className="flex flex-wrap items-center gap-3">
+src/pages/public/Courses.tsx:439:            <div className="flex flex-wrap items-center gap-x-10 gap-y-5">
+src/pages/public/Home.tsx:344:              <div className="flex flex-wrap items-center gap-3">
+src/pages/public/OurStory.tsx:543:          <div className="mt-8 flex flex-wrap justify-center gap-3">
+src/pages/public/VerticalSeries.tsx:191:          <div className="mt-5 flex flex-wrap items-center justify-between gap-3 px-1">
+src/pages/public/VerticalSeries.tsx:217:        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+
+=== 9. FORBIDDEN DEPENDENCIES AND ARCHITECTURE FLAGS ===
+
+=== 10. SOURCE FILE INVENTORY ===
+src/App.tsx
+src/components/auth/ProtectedRoute.tsx
+src/components/dashboard/AchievementCard.tsx
+src/components/dashboard/CourseCard.tsx
+src/components/dashboard/ExamCard.tsx
+src/components/dashboard/LearningLevel.tsx
+src/components/dashboard/LearningProgressCard.tsx
+src/components/dashboard/LearningStatus.tsx
+src/components/dashboard/LessonTimeline.tsx
+src/components/dashboard/NextActionCard.tsx
+src/components/dashboard/PerformanceSnapshot.tsx
+src/components/dashboard/QuizCard.tsx
+src/components/dashboard/StatisticsPanel.tsx
+src/components/dashboard/StudentHeader.tsx
+src/components/dashboard/SubjectCard.tsx
+src/components/layout/BottomNav.tsx
+src/components/layout/DashboardLayout.tsx
+src/components/layout/LeftRail.tsx
+src/components/layout/PublicLayout.tsx
+src/components/layout/RightRail.tsx
+src/components/layout/SiteFooter.tsx
+src/components/layout/TopBar.tsx
+src/components/live/InstructorTile.tsx
+src/components/live/LiveToolbar.tsx
+src/components/live/ScriptOverlay.tsx
+src/components/live/StudentTile.tsx
+src/components/live/ZoomPanel.tsx
+src/components/payment/PaymentQR.tsx
+src/components/payment/PaymentStatus.tsx
+src/components/payment/QRCountdown.tsx
+src/components/primitives/CathedralBadge.tsx
+src/components/primitives/CathedralButton.tsx
+src/components/primitives/CathedralCard.tsx
+src/components/primitives/CathedralFooter.tsx
+src/components/primitives/CathedralIcon.tsx
+src/components/primitives/CathedralStatus.tsx
+src/components/routing/ScrollToTop.tsx
+src/data/mockDashboard.ts
+src/data/mockPrograms.ts
+src/data/mockVerticalSeries.ts
+src/hooks/useLocalStorage.ts
+src/hooks/useMediaQuery.ts
+src/hooks/useReducedMotion.ts
+src/index.css
+src/layouts/BottomNav.tsx
+src/layouts/PublicLayout.tsx
+src/lib/auth/client.ts
+src/lib/auth/useEnrollments.ts
+src/lib/auth/useProfile.ts
+src/lib/auth/useSession.ts
+src/lib/auth/useSubscription.ts
+src/lib/db/client.ts
+src/lib/db/enrollments.ts
+src/lib/db/payments.ts
+src/lib/db/profiles.ts
+src/lib/db/programs.ts
+src/lib/notify/index.ts
+src/lib/notify/noop.ts
+src/lib/notify/supabase-smtp.ts
+src/lib/payments/crypto.ts
+src/lib/payments/qr.ts
+src/lib/payments/stripe.ts
+src/lib/realtime/client.ts
+src/lib/storage/client.ts
+src/lib/zoom/generateZoomJwt.ts
+src/lib/zoom/useZoomSession.ts
+src/main.tsx
+src/pages/NotFound.tsx
+src/pages/admin/AdminDashboard.tsx
+src/pages/auth/Callback.tsx
+src/pages/auth/Login.tsx
+src/pages/auth/Signup.tsx
+src/pages/dashboard/Attendance.tsx
+src/pages/dashboard/Certificate.tsx
+src/pages/dashboard/Dashboard.tsx
+src/pages/dashboard/DashboardModules.tsx
+src/pages/dashboard/Journal.tsx
+src/pages/dashboard/LiveRoom.tsx
+src/pages/dashboard/Questions.tsx
+src/pages/dashboard/Scores.tsx
+src/pages/dashboard/Scripts.tsx
+src/pages/public/Contact.tsx
+src/pages/public/Courses.tsx
+src/pages/public/Home.tsx
+src/pages/public/Instructors.tsx
+src/pages/public/OurStory.tsx
+src/pages/public/VerticalSeries.tsx
+src/pages/public/vercel.json
+src/policy/admissions.ts
+src/policy/attendance.ts
+src/policy/scoring.ts
+src/types/database.ts
+src/types/payment.ts
+src/types/program.ts
+src/types/session.ts
+
+=== 11. AUDIT INTERPRETATION ===
+This is a static screening report, not a certified pass/fail test.
+
+PASS requires inspection of implementation and behavior, not merely token
+presence. Search matches are candidates for review, not automatic violations:
+legitimate token definitions, SVG data, comments, and unrelated uses can match.
+
+REVIEW:
+- Confirm all three sacred material values and all five shadow definitions.
+- Check text/background contrast, including actual rendered card states.
+- Confirm controls are pressed, presentation cards float, and selected states
+  are inset rather than bright overlays.
+- Confirm the exact font roles, typography scale, radii, spacing, and breakpoints.
+- Confirm every page reuses existing Cathedral primitives.
+- Test keyboard access, skip link, focus indicators, reduced motion, mobile
+  recomposition, and semantic heading hierarchy.
+- Verify dependencies against the actual installed package tree and lockfile.
+- This sweep does not modify source files, install packages, or deploy.
+
+=== END OF CUCO UI/UX LAW SWEEP ===

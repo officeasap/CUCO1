@@ -1,3 +1,4 @@
+
 import {
   BriefcaseBusiness,
   Globe2,
@@ -80,13 +81,9 @@ export function SiteFooter() {
             </Link>
 
             <h2 className="cuco-editorial mt-5 max-w-xs text-2xl font-semibold leading-tight text-text-on-substrate-primary">
-              Firm Authoritative Slogan
+              We develop artists through disciplined education, cultural
+              knowledge, and practical creative practice.
             </h2>
-
-            <p className="mt-3 max-w-sm text-sm leading-6 text-text-on-substrate-muted">
-              A serious learning environment built around disciplined
-              education, practical knowledge, and future-ready capability.
-            </p>
           </section>
 
           <section aria-labelledby="footer-menu">

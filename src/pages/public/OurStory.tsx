@@ -15,7 +15,7 @@ const productions = [
     year: '2015',
     title: 'The Death of Miss America',
     detail:
-      'Written by KWAME KWAME, this spoof beauty pageant examined stereotypes of Asian women and the emerging ASEAN Economic Community.',
+      'Written by Loni Berry, this spoof beauty pageant examined stereotypes of Asian women and the emerging ASEAN Economic Community.',
   },
   {
     year: '2015',
@@ -29,19 +29,19 @@ const productions = [
     title: '12 Angry Men',
     detail:
       'A multilingual production featuring a cast from ten countries, and the longest-running Culture Collective Studio production.',
-    credit: 'Directed by KWAME KWAME',
+    credit: 'Directed by Loni Berry',
   },
   {
     year: '2016',
     title: 'The Vagina Monologues',
     detail:
-      'Presented in both English and Thai, with the English production directed by KWAME KWAME with Tonya Pinkins and the Thai production directed by Narakin Khamvilas.',
+      'Presented in both English and Thai, with the English production directed by Loni Berry with Tonya Pinkins and the Thai production directed by Narakin Khamvilas.',
   },
   {
     year: '2017',
     title: 'Miss Julie',
     detail:
-      'Adapted by KWAME KWAME and performed with an all-Indian cast, the production explored caste, identity, and Rohingya themes.',
+      'Adapted by Loni Berry and performed with an all-Indian cast, the production explored caste, identity, and Rohingya themes.',
   },
   {
     year: '2018',
@@ -59,7 +59,7 @@ const productions = [
 ]
 
 const founders = [
-  'KWAME KWAME',
+  'Loni Berry',
   'Saratsa Sasitvirarom',
   'Caitlin Haas',
   'Kelly B. Jones',
@@ -73,7 +73,7 @@ const awards = [
     items: [
       'Best Play — WON — The Lisbon Traviata',
       'Best Male Performer — WON — Steven Fry',
-      'Best Director — NOMINATED — KWAME KWAME',
+      'Best Director — NOMINATED — Loni Berry',
     ],
   },
   {
@@ -148,7 +148,7 @@ export function OurStory() {
               SINCE 2006
             </p>
             <p className="mt-3 text-sm leading-6 text-text-on-card-secondary">
-              KWAME KWAME moved to Bangkok and began building toward the
+              Loni Berry moved to Bangkok and began building toward the
               theatre he had long imagined.
             </p>
           </div>
@@ -192,7 +192,7 @@ export function OurStory() {
             <p>
               The story began more than twenty years before the official launch
               of Culture Collective Studio. In 2006, American theatre
-              professional KWAME KWAME moved to Bangkok with a long-standing
+              professional Loni Berry moved to Bangkok with a long-standing
               dream: to create his own theatre.
             </p>
 
