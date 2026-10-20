@@ -1,38 +1,41 @@
 {
-"name": "Culture Collective Studio",
-"short_name": "COCU",
-"description": "GET A GOOD DESCRIPTION HERE.",
-"id": "/",
-"start_url": "/",
-"scope": "/",
-"display": "standalone",
-"orientation": "portrait-primary",
-"theme_color": "#292824",
-"background_color": "#F0EDE8",
-"lang": "en",
-"dir": "ltr",
-"categories": [
-"business",
-"productivity"
-],
-"icons": [
-{
-"src": "/cocu.png",
-"sizes": "any",
-"type": "image/png",
-"purpose": "any"
-},
-{
-"src": "/web-app-manifest-192x192.png",
-"sizes": "192x192",
-"type": "image/png",
-"purpose": "maskable"
-},
-{
-"src": "/web-app-manifest-512x512.png",
-"sizes": "512x512",
-"type": "image/png",
-"purpose": "maskable"
-}
-]
+  "name": "Culture Collective Studio · CUCO",
+  "short_name": "CUCO",
+  "description": "CUCO is a global online conservatory for theatre artists — professional-level training in acting, directing, writing, voice and speech, and singing, taught live by working professionals.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#1c1b1a",
+  "background_color": "#1c1b1a",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "entertainment"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/cuco.png",
+      "sizes": "48x48 72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
 }
