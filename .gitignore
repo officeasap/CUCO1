@@ -36,3 +36,8 @@ supabase/.temp/
 .vercel/
 
 .vercel
+
+# Backup files
+*.bak
+*.bak-*
+*.bak.*

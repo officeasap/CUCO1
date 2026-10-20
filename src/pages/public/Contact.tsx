@@ -3,7 +3,6 @@ import {
   Globe2,
   Mail,
   MapPin,
-  MessageSquare,
   Phone,
 } from 'lucide-react'
 import type { SubmitEvent } from 'react'

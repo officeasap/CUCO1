@@ -1,6 +1,5 @@
 
-import { Navigate, Route, Routes } from 'react-router-dom'
-
+import { Route, Routes } from 'react-router-dom'
 import { ProtectedRoute } from '@/components/auth/ProtectedRoute'
 import { DashboardLayout } from '@/components/layout/DashboardLayout'
 import { ScrollToTop } from '@/components/routing/ScrollToTop'
@@ -30,7 +29,6 @@ import { VerticalSeries } from '@/pages/public/VerticalSeries'
 import { PublicLayout } from '@/layouts/PublicLayout'
 
 // NEW — Cathedral UI primitives
-import { FeatureCards } from '@/components/FeatureCards'
 
 function App() {
   return (
