@@ -1,12 +1,12 @@
 
-import { useState } from 'react'
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 
 import { SiteFooter } from '@/components/layout/SiteFooter'
 import { BottomNav } from '@/layouts/BottomNav'
 
 const navigation = [
-    { label: 'Home', to: '/' },           // <--- ADDED HOME BACK
+  { label: 'Home', to: '/' },
   { label: 'Courses', to: '/courses' },
   { label: 'Instructors', to: '/instructors' },
   { label: 'Our Story', to: '/our-story' },
@@ -38,21 +38,21 @@ function PublicNavigationLink({
       end={to === '/'}
       to={to}
     >
-      {({ isActive }) => (
-        <>
-          <span aria-current={isActive ? 'page' : undefined}>{label}</span>
-        </>
-      )}
+      {label}
     </NavLink>
   )
 }
 
 export function PublicLayout() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    setMobileOpen(false)
+  }, [location.pathname, location.search, location.hash])
 
   return (
     <div className="min-h-screen bg-smoked-powder text-text-on-substrate-primary">
-      {/* SKIP LINK — WCAG AA. Visually hidden until keyboard-focused. */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-control focus:bg-smoked-ember focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-text-on-card-primary focus:shadow-raised"
@@ -62,7 +62,6 @@ export function PublicLayout() {
 
       <header className="sticky top-0 z-50 w-full border-b border-smoked-shadow/30 bg-smoked-powder shadow-raised">
         <div className="cuco-shell flex min-h-20 items-center justify-between gap-6">
-          {/* LOGO — unchanged */}
           <Link
             aria-label="CUCO home"
             className="shrink-0 rounded-control bg-smoked-card p-2 shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
@@ -75,7 +74,6 @@ export function PublicLayout() {
             />
           </Link>
 
-          {/* DESKTOP NAV — Home dropped, Vertical Series added */}
           <nav
             aria-label="Primary navigation"
             className="hidden items-center gap-2 lg:flex"
@@ -89,7 +87,6 @@ export function PublicLayout() {
             ))}
           </nav>
 
-          {/* RIGHT CLUSTER — Sign in + Enter CUCO + mobile toggle */}
           <div className="flex items-center gap-2">
             <NavLink
               to="/login"
@@ -115,7 +112,6 @@ export function PublicLayout() {
               Enter CUCO
             </Link>
 
-            {/* MOBILE TOGGLE — replaces the hidden nav below lg */}
             <button
               type="button"
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
@@ -140,7 +136,6 @@ export function PublicLayout() {
           </div>
         </div>
 
-        {/* MOBILE DRAWER — closes on link click */}
         {mobileOpen && (
           <div
             id="mobile-nav"
@@ -148,25 +143,37 @@ export function PublicLayout() {
           >
             <nav aria-label="Mobile navigation" className="flex flex-col gap-2">
               {navigation.map((item) => (
-                <PublicNavigationLink
+                <NavLink
                   key={item.to}
-                  label={item.label}
                   to={item.to}
-                />
+                  onClick={() => setMobileOpen(false)}
+                  className={({ isActive }) =>
+                    [
+                      'inline-flex min-h-11 items-center justify-center rounded-control px-4 py-2.5 text-sm font-semibold',
+                      'bg-smoked-card text-text-on-card-primary shadow-raised',
+                      'transition-[box-shadow,transform,color] duration-200 ease-cathedral',
+                      'hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed',
+                      isActive ? 'shadow-pressed' : '',
+                    ].join(' ')
+                  }
+                  end={item.to === '/'}
+                >
+                  {item.label}
+                </NavLink>
               ))}
 
               <div className="mt-3 grid grid-cols-2 gap-2">
                 <Link
                   to="/login"
                   onClick={() => setMobileOpen(false)}
-                  className="inline-flex min-h-11 items-center justify-center rounded-control bg-smoked-card px-4 py-2.5 text-sm font-semibold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+                  className="inline-flex min-h-11 items-center justify-center rounded-control bg-smoked-card px-4 py-2.5 text-sm font-semibold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
                 >
                   Sign in
                 </Link>
                 <Link
                   to="/dashboard"
                   onClick={() => setMobileOpen(false)}
-                  className="inline-flex min-h-11 items-center justify-center rounded-control bg-smoked-ember px-4 py-2.5 text-sm font-bold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-smoked-ember"
+                  className="inline-flex min-h-11 items-center justify-center rounded-control bg-smoked-ember px-4 py-2.5 text-sm font-bold text-text-on-card-primary shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
                 >
                   Enter CUCO
                 </Link>
@@ -176,7 +183,6 @@ export function PublicLayout() {
         )}
       </header>
 
-      {/* MAIN — id="main-content" is the skip-link target. DO NOT remove. */}
       <main
         id="main-content"
         className="relative z-10 min-h-[calc(100svh-80px)] pb-24 md:pb-0"
@@ -185,7 +191,6 @@ export function PublicLayout() {
       </main>
 
       <SiteFooter />
-
       <BottomNav />
     </div>
   )
