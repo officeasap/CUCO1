@@ -10,7 +10,7 @@ export function ProtectedRoute() {
   if (loading) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-smoked-powder px-6 text-text-on-substrate-primary">
-        <div className="rounded-card bg-smoked-card px-8 py-7 text-center shadow-raised">
+        <div className="rounded-card bg-smoked-card px-5 py-7 text-center shadow-raised">
           <p className="cuco-kicker text-text-on-card-secondary">
             CUCO AUTHENTICATION
           </p>

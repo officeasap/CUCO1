@@ -1,7 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+/* ============================================================
+   CUCO — Global Stylesheet (Cathedral v2)
+   Rules:
+   - No glow. No blur. No color rings.
+   - Flat card surfaces. Inset focus. Compact type scale.
+   ============================================================ */
 
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import "./styles/cathedral.css";
 @import "tailwindcss";
 
+/* ============================================================
+   THEME
+   ============================================================ */
 @theme {
   --color-smoked-powder: #1c1b1a;
   --color-smoked-card: #2f2f2c;
@@ -13,456 +23,383 @@
   --color-smoked-error: #d85c55;
 
   --color-text-on-card-primary: #e5decc;
-  --color-text-on-card-secondary: #e5decc;
+  --color-text-on-card-secondary: #c9c1af;
   --color-text-on-substrate-primary: #e5decc;
-  --color-text-on-substrate-muted: #e5decc;
+  --color-text-on-substrate-muted: #b9b2a4;
 
   --font-family-editorial: "EB Garamond", Georgia, serif;
   --font-family-interface: Inter, ui-sans-serif, sans-serif;
   --font-family-mono: "JetBrains Mono", monospace;
 
   --radius-card: 16px;
-  --radius-card-sm: 16px;
-  --radius-control: 16px;
-  --radius-checkbox: 16px;
+  --radius-card-sm: 12px;
+  --radius-control: 10px;
+  --radius-checkbox: 5px;
   --radius-radio: 999px;
 
-  --spacing-1: 4px;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  --spacing-4: 16px;
-  --spacing-6: 24px;
-  --spacing-8: 32px;
-  --spacing-12: 48px;
-  --spacing-16: 64px;
-
   --ease-cathedral: cubic-bezier(0.4, 0, 0.2, 1);
-
-  --breakpoint-xs: 520px;
-  --breakpoint-sm: 600px;
-  --breakpoint-md: 760px;
-  --breakpoint-lg: 800px;
-  --breakpoint-xl: 900px;
-  --breakpoint-2xl: 1050px;
-}
-
-:root {
-  --material-substrate: #1c1b1a;
-  --material-card: #2f2f2c;
-  --material-shadow: #080503;
-
-  --operational-ember: #c43503;
-  --operational-success: #56cd64;
-  --operational-warning: #e4b34a;
-  --operational-information: #62a8c7;
-  --operational-error: #d85c55;
-
-  --text-card-primary: #e5decc;
-  --text-card-secondary: #e5decc;
-  --text-substrate-primary: #e5decc;
-  --text-substrate-muted: #e5decc;
-
-  /*
-   * ============================================================
-   * CUCO PHYSICAL MATERIAL SYSTEM
-   * ============================================================
-   *
-   * #2f2f2c = the physical object.
-   * #080503 = the physical shadow material.
-   *
-   * Shadows are displaced behind the object rather than hugging
-   * its perimeter. This creates lift without a decorative ring.
-   */
-
-  --shadow-physical:
-    8px 10px 14px rgba(8, 5, 3, 0.68),
-    -3px -3px 7px rgba(8, 5, 3, 0.22);
-
-  --shadow-float:
-    11px 13px 18px rgba(8, 5, 3, 0.72),
-    -4px -4px 9px rgba(8, 5, 3, 0.24);
-
-  --shadow-raised:
-    8px 10px 14px rgba(8, 5, 3, 0.68),
-    -3px -3px 7px rgba(8, 5, 3, 0.22);
-
-  --shadow-raised-hover:
-    10px 13px 17px rgba(8, 5, 3, 0.76),
-    -4px -4px 9px rgba(8, 5, 3, 0.28);
-
-  --shadow-pressed:
-    inset 4px 5px 8px rgba(8, 5, 3, 0.72),
-    inset -3px -3px 7px rgba(8, 5, 3, 0.28);
-
-  /*
-   * ============================================================
-   * TYPOGRAPHIC MATERIAL
-   * ============================================================
-   *
-   * Text receives the same Smudge Smoked Powder shadow material,
-   * but at microscopic physical offsets.
-   *
-   * This is intentionally NOT a glow and NOT a text outline.
-   */
-
-  --text-shadow-physical:
-    1px 1px 1px rgba(8, 5, 3, 0.72);
-
-  --text-shadow-editorial:
-    1px 1px 1.5px rgba(8, 5, 3, 0.78);
-
-  --text-shadow-interface:
-    1px 1px 1px rgba(8, 5, 3, 0.68);
-
-  --text-shadow-mono:
-    1px 1px 1px rgba(8, 5, 3, 0.72);
-
-  /*
-   * Focus remains an accessibility affordance only.
-   * It is not part of the physical material system.
-   */
-
-  --shadow-contact:
-    0 0 0 3px rgba(196, 53, 3, 0.22);
-
-  --shell-width: 1200px;
-  --motion-cathedral: cubic-bezier(0.4, 0, 0.2, 1);
-
-  font-family: Inter, ui-sans-serif, sans-serif;
-  color: var(--text-substrate-primary);
-  background: var(--material-substrate);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  min-width: 320px;
-  background: var(--material-substrate);
-  scroll-behavior: smooth;
-}
-
-body {
-  min-width: 320px;
-  min-height: 100svh;
-  margin: 0;
-  background: var(--material-substrate);
-  color: var(--text-substrate-primary);
-  font-family: Inter, ui-sans-serif, sans-serif;
-
-  /*
-   * Global interface typography receives the same physical
-   * shadow material as the objects surrounding it.
-   */
-
-  text-shadow: var(--text-shadow-interface);
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-  text-shadow: inherit;
-}
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-button {
-  cursor: pointer;
-}
-
-img,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 /* ============================================================
-   GLOBAL PHYSICAL SURFACES
+   BASE
    ============================================================ */
+@layer base {
+  :root {
+    color-scheme: dark;
 
-:where(.bg-smoked-card) {
-  background-color: var(--material-card);
-  box-shadow: var(--shadow-physical);
-}
+    --material-substrate: #1c1b1a;
+    --material-card: #2f2f2c;
+    --material-shadow: #080503;
 
-:where(.rounded-card.bg-smoked-card),
-:where(.rounded-control.bg-smoked-card) {
-  background-color: var(--material-card);
-  box-shadow: var(--shadow-physical);
-}
+    --operational-ember: #c43503;
+    --operational-success: #56cd64;
+    --operational-warning: #e4b34a;
+    --operational-information: #62a8c7;
+    --operational-error: #d85c55;
 
-/* ============================================================
-   BUTTONS / LINKS / INTERACTIVE OBJECTS
-   ============================================================ */
+    --text-card-primary: #e5decc;
+    --text-card-secondary: #c9c1af;
+    --text-substrate-primary: #e5decc;
+    --text-substrate-muted: #b9b2a4;
 
-:where(button.bg-smoked-card),
-:where(a.bg-smoked-card),
-:where([role="button"].bg-smoked-card) {
-  background-color: var(--material-card);
-  box-shadow: var(--shadow-raised);
+    --shadow-physical:
+      6px 8px 14px rgba(8, 5, 3, 0.44),
+      -2px -2px 6px rgba(229, 222, 204, 0.018);
+    --shadow-float:
+      9px 12px 20px rgba(8, 5, 3, 0.52),
+      -2px -2px 7px rgba(229, 222, 204, 0.025);
+    --shadow-raised: var(--shadow-physical);
+    --shadow-raised-hover: var(--shadow-float);
+    --shadow-pressed:
+      inset 3px 4px 8px rgba(8, 5, 3, 0.48),
+      inset -1px -1px 4px rgba(229, 222, 204, 0.025);
 
-  transition:
-    box-shadow 200ms var(--motion-cathedral),
-    transform 200ms var(--motion-cathedral),
-    color 200ms var(--motion-cathedral);
-}
+    --text-shadow-physical: 0 1px 1px rgba(8, 5, 3, 0.3);
+    --text-shadow-editorial: 0 1px 1px rgba(8, 5, 3, 0.28);
 
-:where(button.bg-smoked-card:hover),
-:where(a.bg-smoked-card:hover),
-:where([role="button"].bg-smoked-card:hover) {
-  box-shadow: var(--shadow-raised-hover);
-  transform: translateY(-1px);
-}
+    /* NEUTRALIZED — was 0 0 0 3px rgba(196,53,3,0.3) — that's the ember glow */
+    --shadow-contact: none;
 
-:where(button.bg-smoked-card:active),
-:where(a.bg-smoked-card:active),
-:where([role="button"].bg-smoked-card:active) {
-  box-shadow: var(--shadow-pressed);
-  transform: translateY(1px);
-}
+    --shell-width: 1200px;
+    --motion-cathedral: cubic-bezier(0.4, 0, 0.2, 1);
+    --cuco-card-pad: clamp(16px, 1.5vw, 22px);
+    --cuco-copy-leading: 1.6;
 
-/* ============================================================
-   FORMS / TEXTBOXES / SELECTS
-   ============================================================ */
+    font-family: Inter, ui-sans-serif, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: var(--cuco-copy-leading);
+    color: var(--text-substrate-primary);
+    background: var(--material-substrate);
 
-:where(
-  input.bg-smoked-card,
-  select.bg-smoked-card,
-  textarea.bg-smoked-card
-) {
-  background-color: var(--material-card);
-  box-shadow: var(--shadow-pressed);
-  border: 0;
-}
-
-:where(
-  input.bg-smoked-card:focus-visible,
-  select.bg-smoked-card:focus-visible,
-  textarea.bg-smoked-card:focus-visible
-) {
-  box-shadow:
-    var(--shadow-pressed),
-    var(--shadow-contact);
-}
-
-:where(
-  input,
-  select,
-  textarea
-) {
-  border-color: transparent;
-}
-
-:where(
-  input.bg-smoked-card,
-  select.bg-smoked-card,
-  textarea.bg-smoked-card
-)::placeholder {
-  color: var(--text-card-secondary);
-  opacity: 0.68;
-}
-
-/* ============================================================
-   IMAGE / VISUAL SURFACES
-   ============================================================ */
-
-:where(img.bg-smoked-card) {
-  background-color: var(--material-card);
-  box-shadow: var(--shadow-physical);
-}
-
-/* ============================================================
-   TYPOGRAPHIC MATERIAL CLASSES
-   ============================================================ */
-
-.cuco-editorial {
-  font-family: "EB Garamond", Georgia, serif;
-  font-weight: 500;
-  text-shadow: var(--text-shadow-editorial);
-}
-
-.cuco-interface {
-  font-family: Inter, ui-sans-serif, sans-serif;
-  text-shadow: var(--text-shadow-interface);
-}
-
-.cuco-mono {
-  font-family: "JetBrains Mono", monospace;
-  text-shadow: var(--text-shadow-mono);
-}
-
-.cuco-kicker {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
-  text-transform: uppercase;
-  text-shadow: var(--text-shadow-mono);
-}
-
-.cuco-numeric {
-  font-family: "JetBrains Mono", monospace;
-  font-variant-numeric: tabular-nums;
-  text-shadow: var(--text-shadow-mono);
-}
-
-/*
- * ============================================================
- * CUCO GLOBAL TYPOGRAPHIC SCALE
- * ============================================================
- *
- * Semantic headings have a hard global ceiling.
- *
- * Page-level Tailwind display utilities such as:
- *
- *   text-6xl
- *   text-7xl
- *   text-8xl
- *   text-9xl
- *   text-[7.5rem]
- *   text-[9rem]
- *
- * must NOT be allowed to turn ordinary CUCO headings into
- * billboard typography.
- *
- * Editorial hierarchy remains substantial, but controlled.
- */
-
-/* Physical typography material */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-shadow: var(--text-shadow-physical);
-}
-
-/*
- * H1
- *
- * 36px → fluid → 64px maximum.
- *
- * This is the primary page-heading ceiling.
- */
-
-h1 {
-  font-size: clamp(2.25rem, 5vw, 4rem) !important;
-  line-height: 0.98 !important;
-  letter-spacing: -0.025em;
-}
-
-/*
- * H2
- *
- * 28px → fluid → 48px maximum.
- *
- * This prevents page sections from becoming competing hero
- * headlines.
- */
-
-h2 {
-  font-size: clamp(1.75rem, 3.5vw, 3rem) !important;
-  line-height: 1.02 !important;
-  letter-spacing: -0.02em;
-}
-
-/*
- * H3
- *
- * 22px → fluid → 32px maximum.
- */
-
-h3 {
-  font-size: clamp(1.375rem, 2.5vw, 2rem) !important;
-  line-height: 1.08 !important;
-  letter-spacing: -0.01em;
-}
-
-/*
- * Supporting semantic headings stay deliberately compact.
- */
-
-h4 {
-  font-size: 1.5rem !important;
-  line-height: 1.15 !important;
-}
-
-h5 {
-  font-size: 1.25rem !important;
-  line-height: 1.2 !important;
-}
-
-h6 {
-  font-size: 1rem !important;
-  line-height: 1.25 !important;
-}
-
-/*
- * Paragraphs, labels and navigation inherit the global
- * interface shadow naturally.
- */
-
-p,
-label,
-nav,
-legend {
-  text-shadow: inherit;
-}
-
-/* ============================================================
-   ACCESSIBILITY
-   ============================================================ */
-
-:focus-visible {
-  outline: 3px solid var(--operational-ember);
-  outline-offset: 3px;
-}
-
-::selection {
-  background: var(--operational-ember);
-  color: var(--text-card-primary);
-}
-
-/* ============================================================
-   CUCO SHELL
-   ============================================================ */
-
-.cuco-shell {
-  width: min(100% - 32px, var(--shell-width));
-  margin-inline: auto;
-}
-
-/* ============================================================
-   REDUCED MOTION
-   ============================================================ */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    min-width: 320px;
+    background: var(--material-substrate);
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--material-substrate);
+    color: var(--text-substrate-primary);
+    font-family: Inter, ui-sans-serif, sans-serif;
+    font-size: 0.9375rem;  /* 15px */
+    font-weight: 400;
+    line-height: var(--cuco-copy-leading);
+  }
+
+  img, svg, video { max-width: 100%; }
+  img { vertical-align: middle; }
+
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button { cursor: pointer; }
+  button:disabled { cursor: not-allowed; opacity: 0.6; }
+  a { color: inherit; text-decoration: none; }
+
+  p {
+    margin-block: 0 1rem;
+    line-height: var(--cuco-copy-leading);
+    text-wrap: pretty;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "EB Garamond", Georgia, serif;
+    font-weight: 500;
+    text-wrap: balance;
+    text-shadow: var(--text-shadow-physical);
+  }
+
+  /* ============================================================
+     GLOBAL TYPE SCORCH — final reduced clamps
+     On 1440px: h1 = 40px, h2 = 30px, h3 = 24px
+     ============================================================ */
+  h1 {
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+  }
+  h4 { font-size: 1rem;      line-height: 1.35; font-weight: 600; }
+  h5 { font-size: 0.9375rem; line-height: 1.4;  font-weight: 600; }
+  h6 { font-size: 0.875rem;  line-height: 1.45; font-weight: 600; }
+
+  @media (max-width: 640px) {
+    h1 { font-size: clamp(1.6rem, 7vw, 2rem); }
+    h2 { font-size: clamp(1.3rem, 5.5vw, 1.65rem); }
+    h3 { font-size: clamp(1.05rem, 4.2vw, 1.3rem); }
+  }
+
+  ::selection {
+    background: var(--operational-ember);
+    color: var(--text-card-primary);
+  }
+
+  /* ============================================================
+     CATHEDRAL LAW — kill ALL outer focus glows
+     Focus is INSET only. No rings. No halos.
+     ============================================================ */
+  :where(input, textarea, select, button, a):focus-visible {
+    outline: none !important;
+  }
+}
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+@layer components {
+  .cuco-editorial { font-family: "EB Garamond", Georgia, serif; font-weight: 500; text-shadow: var(--text-shadow-editorial); }
+  .cuco-interface { font-family: Inter, ui-sans-serif, sans-serif; }
+  .cuco-mono, .cuco-numeric { font-family: "JetBrains Mono", monospace; }
+  .cuco-numeric { font-variant-numeric: tabular-nums; }
+  .cuco-kicker {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  :where(.bg-smoked-card) {
+    background-color: var(--material-card);
+    box-shadow: var(--shadow-physical);
+  }
+  :where(.rounded-card) { border-radius: 16px; }
+  :where(.rounded-card.bg-smoked-card),
+  :where(.rounded-control.bg-smoked-card) {
+    background-color: var(--material-card);
+    box-shadow: var(--shadow-physical);
+  }
+
+  :where(button.bg-smoked-card),
+  :where(a.bg-smoked-card),
+  :where([role="button"].bg-smoked-card) {
+    background-color: var(--material-card);
+    box-shadow: var(--shadow-raised);
+    transition:
+      box-shadow 200ms var(--motion-cathedral),
+      transform 200ms var(--motion-cathedral);
+  }
+  :where(button.bg-smoked-card:hover),
+  :where(a.bg-smoked-card:hover),
+  :where([role="button"].bg-smoked-card:hover) {
+    box-shadow: var(--shadow-raised-hover);
+    transform: translateY(-1px);
+  }
+  :where(button.bg-smoked-card:active),
+  :where(a.bg-smoked-card:active),
+  :where([role="button"].bg-smoked-card:active) {
+    box-shadow: var(--shadow-pressed);
+    transform: translateY(1px);
+  }
+
+  /* ============================================================
+     FORMS — inset only. NO focus ring. NO colored halo.
+     ============================================================ */
+  :where(input.bg-smoked-card, select.bg-smoked-card, textarea.bg-smoked-card) {
+    background-color: var(--material-card);
+    box-shadow: var(--shadow-pressed);
+    border: 1px solid rgba(229, 222, 204, 0.12);
+  }
+  :where(input.bg-smoked-card:focus-visible, select.bg-smoked-card:focus-visible, textarea.bg-smoked-card:focus-visible) {
+    /* INTENTIONALLY EMPTY — inset shadow stays, no outer ring */
+    box-shadow: var(--shadow-pressed);
+    outline: none;
+  }
+  :where(input, select, textarea) { border-color: rgba(229, 222, 204, 0.16); }
+  :where(input.bg-smoked-card, select.bg-smoked-card, textarea.bg-smoked-card)::placeholder {
+    color: var(--text-card-secondary);
+    opacity: 0.75;
+  }
+
+  .cuco-shell {
+    width: min(calc(100% - 32px), var(--shell-width));
+    margin-inline: auto;
+  }
+
+  @media (max-width: 640px) {
+    :root { --cuco-card-pad: 16px; --cuco-copy-leading: 1.55; }
+    .cuco-shell { width: calc(100% - 28px); }
+  }
+
+  /* NEUTRALIZED — was: outline 3px solid ember */
+  :focus-visible {
+    outline: none;
+  }
+}
+
+/* ============================================================
+   GAVELFALL ANIMATION
+   ============================================================ */
+/* ============================================================
+   GAVELFALL NAME — Cathedral reveal animation
+   Works on desktop AND mobile. Streak light = 15s. Drop = 30ms/letter.
+   ============================================================ */
+
+.cuco-gavelfall-name {
+  position: relative;
+  isolation: isolate;
+  width: fit-content;
+  max-width: 100%;
+  /* Allow the streak light to travel outside the text box */
+  overflow: visible;
+}
+
+.cuco-gavelfall-name__letters {
+  display: inline-block;
+}
+
+.cuco-gavelfall-name__letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, -0.55em, 0) rotateX(-28deg);
+  transform-origin: 50% 0%;
+  will-change: transform, opacity;
+  /* Each letter drops for 900ms — heavy, weighted */
+  transition: none;
+}
+
+.cuco-gavelfall-name.is-landed .cuco-gavelfall-name__letter {
+  animation: cuco-gavelfall-drop 900ms
+    cubic-bezier(0.18, 0.78, 0.22, 1.12) both;
+  /* 30ms stagger between letters */
+  animation-delay: calc(var(--letter-index, 0) * 30ms);
+}
+
+/* The streak — a silver light that sweeps across the name for 15s */
+.cuco-gavelfall-name::after {
+  position: absolute;
+  z-index: 2;
+  top: -2%;
+  bottom: -2%;
+  left: -20%;
+  width: 12%;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(229, 222, 204, 0) 20%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(229, 222, 204, 0) 80%,
+    transparent 100%
+  );
+  transform: skewX(-18deg) translateX(-200%);
+  filter: blur(0.5px);
+  will-change: transform, opacity;
+}
+
+/* When landed, run the 15s sweep */
+.cuco-gavelfall-name.is-landed::after {
+  animation: cuco-gavelfall-streak 15s ease-in-out 500ms both;
+}
+
+@keyframes cuco-gavelfall-drop {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -0.55em, 0) rotateX(-28deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 0.08em, 0) rotateX(3deg);
+  }
+  80% {
+    opacity: 1;
+    transform: translate3d(0, -0.03em, 0) rotateX(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateX(0deg);
+  }
+}
+
+/* 15-second streak. Moves slowly across the whole name width. */
+@keyframes cuco-gavelfall-streak {
+  0% {
+    opacity: 0;
+    transform: skewX(-18deg) translateX(-200%);
+  }
+  8% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+    transform: skewX(-18deg) translateX(400%);
+  }
+  92% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: skewX(-18deg) translateX(1200%);
+  }
+}
+
+/* Mobile: ensure no parent clips the streak */
+@media (max-width: 1023px) {
+  .cuco-gavelfall-name {
+    /* Prevent parent overflow:hidden from clipping the sweep */
+    clip-path: none;
+  }
+}
+/* ============================================================
+   UTILITIES — section rhythm
+   ============================================================ */
+@layer utilities {
+  .py-section    { padding-block: 3.5rem; }
+  .py-section-lg { padding-block: 6rem; }
+  .py-hero       { padding-block: 4.5rem; }
+  .py-hero-lg    { padding-block: 7rem; }
+  .gap-section   { gap: 2.5rem; }
+  .mt-section    { margin-top: 3.5rem; }
+  .mb-section    { margin-bottom: 3.5rem; }
+
+  .py-20 { padding-block: 3.5rem !important; }
+  .py-24 { padding-block: 4rem !important; }
+  .py-32 { padding-block: 5rem !important; }
 }

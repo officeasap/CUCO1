@@ -1,0 +1,265 @@
+/* ============================================================
+   CUCO CATHEDRAL — Neumorphic Surface System
+   Tonal stack (from your spec):
+     Top surface   #062118  — card background ("smoked powder")
+     Inner shadow  #0b3225  — subtle edge depth
+     Main shadow   #164938  — object separation
+     Ambient       #58766c  — grounding & realism
+   Rules: no borders, no clutter, layered shadows, soft edges.
+   ============================================================ */
+
+@layer components {
+  /* ---------- Tonal tokens (additive — does NOT override @theme) ---------- */
+  :root {
+    --cathedral-top:        #062118;
+    --cathedral-inner:      #0b3225;
+    --cathedral-main:       #164938;
+    --cathedral-ambient:    #58766c;
+
+    /* Physical / float / pressed shadows — matches your spec exactly */
+    --cathedral-shadow-physical:
+      0 12px 24px rgba(6, 33, 24, 0.45),
+      0 6px 12px  rgba(11, 50, 37, 0.25),
+      0 2px 4px   rgba(88, 118, 108, 0.15);
+
+    --cathedral-shadow-float:
+      0 18px 36px rgba(6, 33, 24, 0.52),
+      0 8px 16px  rgba(22, 73, 56, 0.30),
+      0 3px 6px   rgba(88, 118, 108, 0.18);
+
+    --cathedral-shadow-pressed:
+      inset 0 3px 6px rgba(6, 33, 24, 0.55),
+      inset 0 -1px 2px rgba(88, 118, 108, 0.10);
+
+    /* Inner bevel that gives the "physical object" edge */
+    --cathedral-inner-bevel:
+      inset 0 1px 0 rgba(11, 50, 37, 0.85),
+      inset 0 -1px 0 rgba(6, 33, 24, 0.95);
+
+    --cathedral-radius-card:    16px;
+    --cathedral-radius-control: 10px;
+    --cathedral-radius-pill:    999px;
+
+    --cathedral-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ---------- CARD ---------- */
+  .cath-card {
+    position: relative;
+    isolation: isolate;
+    background-color: var(--cathedral-top);
+    border-radius: var(--cathedral-radius-card);
+    box-shadow:
+      var(--cathedral-shadow-physical),
+      var(--cathedral-inner-bevel);
+    transition:
+      transform 240ms var(--cathedral-ease),
+      box-shadow 240ms var(--cathedral-ease);
+    /* NO borders, per spec */
+  }
+
+  /* Elevated variant — used for hero cards, "Track / Trace / Deliver" */
+  .cath-card--raised {
+    box-shadow:
+      var(--cathedral-shadow-float),
+      var(--cathedral-inner-bevel);
+  }
+
+  /* Interactive variant */
+  .cath-card--interactive {
+    cursor: pointer;
+  }
+  .cath-card--interactive:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      var(--cathedral-shadow-float),
+      var(--cathedral-inner-bevel);
+  }
+  .cath-card--interactive:active {
+    transform: translateY(1px);
+    box-shadow:
+      var(--cathedral-shadow-pressed),
+      var(--cathedral-inner-bevel);
+  }
+
+  /* Featured / number-badge accent (01 · 02 · 03 in your spec) */
+  .cath-card__number {
+    display: inline-block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--color-text-on-card-secondary, #c9c1af);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-smoked-ember, #c43503);
+  }
+
+  /* ---------- BUTTON ---------- */
+  .cath-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    font-family: Inter, ui-sans-serif, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border-radius: var(--cathedral-radius-control);
+    border: none;
+    cursor: pointer;
+    background-color: var(--cathedral-top);
+    color: var(--color-text-on-card-primary, #e5decc);
+    box-shadow:
+      var(--cathedral-shadow-physical),
+      var(--cathedral-inner-bevel);
+    transition:
+      transform 200ms var(--cathedral-ease),
+      box-shadow 200ms var(--cathedral-ease),
+      background-color 200ms var(--cathedral-ease);
+  }
+  .cath-btn:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      var(--cathedral-shadow-float),
+      var(--cathedral-inner-bevel);
+  }
+  .cath-btn:active {
+    transform: translateY(1px);
+    box-shadow:
+      var(--cathedral-shadow-pressed),
+      var(--cathedral-inner-bevel);
+  }
+
+  /* Ember primary CTA — matches your accent */
+  .cath-btn--ember {
+    background-color: var(--color-smoked-ember, #c43503);
+    color: #fff7f1;
+    box-shadow:
+      0 12px 24px rgba(196, 53, 3, 0.35),
+      0 6px 12px  rgba(196, 53, 3, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+  .cath-btn--ember:hover {
+    background-color: #d93e08;
+    box-shadow:
+      0 18px 36px rgba(196, 53, 3, 0.42),
+      0 8px 16px  rgba(196, 53, 3, 0.26),
+      inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  }
+  .cath-btn--ember:active {
+    box-shadow:
+      inset 0 3px 6px rgba(120, 30, 0, 0.6),
+      inset 0 -1px 2px rgba(255, 255, 255, 0.06);
+  }
+
+  /* Quiet variant */
+  .cath-btn--ghost {
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--color-text-on-substrate-muted, #b9b2a4);
+  }
+  .cath-btn--ghost:hover {
+    color: var(--color-text-on-substrate-primary, #e5decc);
+    box-shadow: none;
+  }
+
+  /* ---------- ICON BUTTON ---------- */
+  .cath-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--cathedral-radius-control);
+    border: none;
+    background-color: var(--cathedral-top);
+    color: var(--color-text-on-card-primary, #e5decc);
+    box-shadow:
+      var(--cathedral-shadow-physical),
+      var(--cathedral-inner-bevel);
+    cursor: pointer;
+    transition:
+      transform 180ms var(--cathedral-ease),
+      box-shadow 180ms var(--cathedral-ease);
+  }
+  .cath-icon-btn:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      var(--cathedral-shadow-float),
+      var(--cathedral-inner-bevel);
+  }
+  .cath-icon-btn:active {
+    transform: translateY(1px);
+    box-shadow:
+      var(--cathedral-shadow-pressed),
+      var(--cathedral-inner-bevel);
+  }
+
+  /* ---------- INPUT / FORM ---------- */
+  .cath-input,
+  .cath-select,
+  .cath-textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-family: Inter, ui-sans-serif, sans-serif;
+    font-size: 0.95rem;
+    color: var(--color-text-on-card-primary, #e5decc);
+    background-color: var(--cathedral-top);
+    border: none;
+    border-radius: var(--cathedral-radius-control);
+    box-shadow:
+      inset 0 3px 6px rgba(6, 33, 24, 0.55),
+      inset 0 -1px 2px rgba(88, 118, 108, 0.10);
+    transition:
+      box-shadow 200ms var(--cathedral-ease),
+      background-color 200ms var(--cathedral-ease);
+    outline: none;
+  }
+  .cath-input::placeholder,
+  .cath-select::placeholder,
+  .cath-textarea::placeholder {
+    color: var(--color-text-on-card-secondary, #c9c1af);
+    opacity: 0.7;
+  }
+  .cath-input:focus-visible,
+  .cath-select:focus-visible,
+  .cath-textarea:focus-visible {
+    box-shadow:
+      inset 0 3px 6px rgba(6, 33, 24, 0.55),
+      inset 0 -1px 2px rgba(88, 118, 108, 0.10),
+      0 0 0 3px rgba(196, 53, 3, 0.30);
+  }
+
+  /* ---------- PILL / BADGE ---------- */
+  .cath-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    border-radius: var(--cathedral-radius-pill);
+    background-color: var(--cathedral-top);
+    color: var(--color-text-on-card-secondary, #c9c1af);
+    box-shadow:
+      0 4px 10px rgba(6, 33, 24, 0.35),
+      inset 0 1px 0 rgba(11, 50, 37, 0.85);
+    border: none;
+  }
+
+  /* ---------- DIVIDER (spec: "no borders, no clutter") ---------- */
+  .cath-rule {
+    height: 1px;
+    border: none;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(88, 118, 108, 0.35),
+      transparent
+    );
+  }
+}

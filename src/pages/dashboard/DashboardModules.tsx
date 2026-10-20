@@ -32,7 +32,7 @@ function DashboardModule({
   children,
 }: DashboardModuleProps) {
   return (
-    <section className="space-y-8">
+    <section className="space-y-5">
       <header className="max-w-4xl">
         <div className="flex items-start gap-4">
           <div className="flex size-14 shrink-0 items-center justify-center rounded-card bg-smoked-card text-text-on-card-primary shadow-raised">
@@ -88,7 +88,7 @@ function EmptyState({
   description: string
 }) {
   return (
-    <div className="rounded-card bg-smoked-card p-8 shadow-raised">
+    <div className="rounded-card bg-smoked-card p-5 shadow-raised">
       <p className="cuco-kicker text-text-on-card-secondary">
         {label}
       </p>

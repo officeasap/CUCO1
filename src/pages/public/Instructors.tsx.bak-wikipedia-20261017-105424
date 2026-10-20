@@ -1,0 +1,409 @@
+
+import { useEffect, useRef, useState } from 'react'
+import {
+  ArrowRight,
+  BookOpen,
+  GraduationCap,
+  MapPin,
+  Mic2,
+  PenTool,
+  Theater,
+} from 'lucide-react'
+import { Link } from 'react-router-dom'
+
+const instructors = [
+  {
+    name: 'Loni Berry',
+    image: '/brand/loni-berry.png',
+    role: 'Founder · Artistic Director · Acting & Directing',
+    disciplines: ['Acting', 'Directing'],
+    icon: Theater,
+    summary:
+      'American theatre educator, playwright, director, and founder of Culture Collective Studio in Bangkok.',
+    bio: [
+      'Loni Berry is an American theatre educator, playwright, and director whose career has moved between professional theatre, higher education, curriculum development, and international artistic collaboration.',
+      'His teaching has included Williams College, California State University San Marcos, and the University of California San Diego. He was also the founding director of Oakland School for the Arts, where he led a curriculum combining college preparation with pre-professional arts training.',
+      'As a playwright and director, his work has been presented at venues and institutions including the American Place Theatre, California Center for the Arts, Great Lakes Theater Festival, Hartford Stage, Kennedy Center, La Jolla Playhouse, Mirror Repertory Theatre, National Black Theatre Festival, New Federal Theatre, Public Theatre, Rites & Reason Theatre, and Seattle Rep.',
+      'Based in Bangkok, Loni Berry founded Culture Collective Studio and became a professor at Bangkok University. He was educated at Brown University and Yale University.',
+    ],
+    credentials: [
+      'Brown University',
+      'Yale University',
+      'Bangkok University',
+      'Founding Director — Oakland School for the Arts',
+    ],
+  },
+  {
+    name: 'Ron Sandberg',
+    role: 'Writing Instructor',
+    disciplines: ['Writing'],
+    icon: PenTool,
+    summary:
+      'American playwright and educator whose career spans professional playwriting, dramatic literature, acting, and university teaching.',
+    bio: [
+      'Ron Sandberg is an American playwright and writing educator with an MFA from the Yale School of Drama.',
+      'His work has been produced internationally and throughout the United States. His teaching has included playwriting, acting, and dramatic literature at Princeton University, where he taught from 1995 through 2022.',
+      'In 2014, he received Princeton’s President’s Award for Distinguished Teaching.',
+      'His work and teaching engage multicultural and social themes, bringing an expansive perspective to the craft of dramatic writing.',
+    ],
+    credentials: [
+      'MFA — Yale School of Drama',
+      'Princeton University',
+      'President’s Award for Distinguished Teaching — 2014',
+      'Internationally produced playwright',
+    ],
+  },
+  {
+    name: 'Kenneth Tarver',
+    image: '/brand/kenneth-traver.png',
+    role: 'Voice · Speech & Singing Instructor',
+    disciplines: ['Voice & Speech', 'Singing'],
+    icon: Mic2,
+    summary:
+      'American operatic tenor whose international career spans Mozart, Rossini, Baroque through contemporary repertoire, major orchestras, opera houses, and recordings.',
+    bio: [
+      'Kenneth Tarver is an American operatic tenor whose repertoire and career extend from Baroque music through contemporary works, with particular recognition for Mozart and Rossini.',
+      'His musical education includes study in Detroit and at Interlochen, followed by a Bachelor of Music from Oberlin and a Master of Music from Yale.',
+      'He was also part of the Metropolitan Opera Young Artist Development Program, an important stage in his professional development.',
+      'His international career has included performances with major orchestras and opera houses, as well as roles, engagements, and discography spanning a broad range of repertoire.',
+    ],
+    credentials: [
+      'Bachelor of Music — Oberlin',
+      'Master of Music — Yale',
+      'Metropolitan Opera Young Artist Development Program',
+      'International opera and concert career',
+    ],
+  },
+]
+
+function PressedLink({
+  children,
+  to,
+}: {
+  children: React.ReactNode
+  to: string
+}) {
+  return (
+    <Link
+      className="inline-flex min-h-12 items-center justify-center gap-3 rounded-control bg-smoked-card px-6 py-3 text-sm font-semibold text-text-on-card-primary shadow-raised transition-[box-shadow,transform,color] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
+      to={to}
+    >
+      {children}
+    </Link>
+  )
+}
+
+function GavelfallName({
+  name,
+  className,
+}: {
+  name: string
+  className: string
+}) {
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  const [landed, setLanded] = useState(false)
+
+  useEffect(() => {
+    const node = headingRef.current
+    if (!node) return
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setLanded(true)
+      return
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      setLanded(true)
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setLanded(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.25, rootMargin: '0px 0px -8% 0px' },
+    )
+
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <h2
+      aria-label={name}
+      className={`${className} cuco-gavelfall-name${landed ? ' is-landed' : ''}`}
+      ref={headingRef}
+    >
+      <span aria-hidden="true" className="cuco-gavelfall-name__letters">
+        {Array.from(name).map((letter, index) => (
+          <span
+            className="cuco-gavelfall-name__letter"
+            key={`${letter}-${index}`}
+            style={{ '--letter-index': index } as React.CSSProperties}
+          >
+            {letter === ' ' ? '\u00a0' : letter}
+          </span>
+        ))}
+      </span>
+    </h2>
+  )
+}
+
+function FacultyCard({
+  instructor,
+  index,
+}: {
+  instructor: (typeof instructors)[number]
+  index: number
+}) {
+  const Icon = instructor.icon
+
+  return (
+    <article className="overflow-hidden rounded-card bg-smoked-card shadow-float">
+      <div className="grid gap-0 lg:grid-cols-[0.7fr_1.3fr]">
+        <div className="relative flex min-h-72 flex-col justify-between bg-smoked-card p-7 shadow-pressed md:min-h-80 md:p-9 lg:min-h-full">
+          <div className="flex items-start justify-between gap-4">
+            {instructor.image ? (
+              <img
+                src={instructor.image}
+                alt={instructor.name}
+                width={160}
+                height={160}
+                loading="lazy"
+                decoding="async"
+                className="h-32 w-32 shrink-0 rounded-card object-cover shadow-raised md:h-40 md:w-40"
+              />
+            ) : (
+              <div className="flex h-32 w-32 shrink-0 items-center justify-center rounded-card bg-smoked-card shadow-pressed md:h-40 md:w-40">
+                <Icon
+                  aria-hidden="true"
+                  className="h-12 w-12 text-smoked-ember md:h-14 md:w-14"
+                />
+              </div>
+            )}
+
+            <p className="cuco-numeric text-xs text-text-on-card-secondary">
+              FACULTY · {String(index + 1).padStart(2, '0')}
+            </p>
+          </div>
+
+          <div className="mt-12">
+            <p className="cuco-kicker text-text-on-card-primary">
+              {instructor.disciplines.join(' · ')}
+            </p>
+
+            <GavelfallName
+              name={instructor.name}
+              className="cuco-editorial mt-4 text-5xl leading-[0.9] text-text-on-card-primary md:text-6xl"
+            />
+
+            <p className="mt-5 text-sm font-semibold leading-6 text-text-on-card-secondary">
+              {instructor.role}
+            </p>
+          </div>
+        </div>
+
+        <div className="p-7 md:p-9 lg:p-12">
+          <p className="text-base leading-7 text-text-on-card-primary md:text-lg md:leading-8">
+            {instructor.summary}
+          </p>
+
+          <div className="mt-8 space-y-5">
+            {instructor.bio.map((paragraph) => (
+              <p
+                className="text-sm leading-7 text-text-on-card-secondary md:text-base md:leading-8"
+                key={paragraph}
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <div className="mt-9">
+            <p className="cuco-kicker text-text-on-card-primary">
+              EDUCATION & CAREER
+            </p>
+
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {instructor.credentials.map((credential) => (
+                <div
+                  className="flex items-start gap-3 rounded-control bg-smoked-card px-4 py-4 text-sm leading-6 text-text-on-card-primary shadow-pressed"
+                  key={credential}
+                >
+                  <GraduationCap
+                    aria-hidden="true"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-smoked-ember"
+                  />
+                  <span>{credential}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  )
+}
+
+export function Instructors() {
+  return (
+    <div className="overflow-hidden">
+      <section className="cuco-shell py-16 md:py-24 lg:py-32">
+        <div className="max-w-5xl">
+          <p className="cuco-kicker text-text-on-substrate-muted">
+            CUCO FACULTY · THE PEOPLE BEHIND THE WORK
+          </p>
+
+          <h1 className="cuco-editorial mt-5 max-w-5xl text-6xl leading-[0.86] text-text-on-substrate-primary sm:text-7xl md:text-8xl lg:text-9xl">
+            Learn from
+            <br />
+            people who
+            <br />
+            do the work.
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-text-on-substrate-muted md:text-xl md:leading-9">
+            CUCO brings professional theatre practice, university teaching,
+            international performance, and serious craft into one global
+            online studio.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-4 md:grid-cols-3">
+          <div className="rounded-card bg-smoked-card p-6 shadow-raised">
+            <Theater
+              aria-hidden="true"
+              className="h-7 w-7 text-smoked-ember"
+            />
+            <p className="cuco-kicker mt-6 text-text-on-card-primary">
+              THEATRE
+            </p>
+            <p className="mt-3 text-sm leading-6 text-text-on-card-secondary">
+              Professional theatrical practice remains at the centre of the
+              studio.
+            </p>
+          </div>
+
+          <div className="rounded-card bg-smoked-card p-6 shadow-raised">
+            <BookOpen
+              aria-hidden="true"
+              className="h-7 w-7 text-smoked-ember"
+            />
+            <p className="cuco-kicker mt-6 text-text-on-card-primary">
+              EDUCATION
+            </p>
+            <p className="mt-3 text-sm leading-6 text-text-on-card-secondary">
+              University-level teaching experience informs the learning
+              environment.
+            </p>
+          </div>
+
+          <div className="rounded-card bg-smoked-card p-6 shadow-raised">
+            <MapPin
+              aria-hidden="true"
+              className="h-7 w-7 text-smoked-ember"
+            />
+            <p className="cuco-kicker mt-6 text-text-on-card-primary">
+              GLOBAL
+            </p>
+            <p className="mt-3 text-sm leading-6 text-text-on-card-secondary">
+              Bangkok, the United States, and international stages meet inside
+              CUCO.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="cuco-shell pb-16 md:pb-24">
+        <div className="mb-12 max-w-3xl">
+          <p className="cuco-kicker text-text-on-substrate-muted">
+            THE FACULTY
+          </p>
+
+          <h2 className="cuco-editorial mt-3 text-4xl leading-[0.95] text-text-on-substrate-primary md:text-5xl">
+            Three disciplines of practice.
+            <br />
+            One serious studio.
+          </h2>
+        </div>
+
+        <div className="space-y-6">
+          {instructors.map((instructor, index) => (
+            <FacultyCard
+              index={index}
+              instructor={instructor}
+              key={instructor.name}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="cuco-shell py-16 md:py-24">
+        <div className="grid gap-5 md:grid-cols-3">
+          {[
+            {
+              label: 'ACTING',
+              text: 'Character, text, performance, and the Gister technique.',
+            },
+            {
+              label: 'DIRECTING',
+              text: 'Analysis, composition, collaboration, and shaping the work.',
+            },
+            {
+              label: 'WRITING',
+              text: 'Dramatic structure, voice, revision, and stories with something to say.',
+            },
+          ].map((discipline, index) => (
+            <div
+              className="rounded-card bg-smoked-card p-7 shadow-raised"
+              key={discipline.label}
+            >
+              <p className="cuco-numeric text-xs text-text-on-card-secondary">
+                0{index + 1}
+              </p>
+
+              <h3 className="cuco-editorial mt-6 text-3xl leading-none text-text-on-card-primary">
+                {discipline.label}
+              </h3>
+
+              <p className="mt-5 text-sm leading-7 text-text-on-card-secondary">
+                {discipline.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="cuco-shell pb-24 pt-8 md:pb-32">
+        <div className="rounded-card bg-smoked-card p-8 shadow-float md:p-14 lg:p-16">
+          <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
+              <p className="cuco-kicker text-text-on-card-primary">
+                STEP INTO THE STUDIO
+              </p>
+
+              <h2 className="cuco-editorial mt-5 max-w-4xl text-5xl leading-[0.9] text-text-on-card-primary md:text-7xl">
+                The faculty is here.
+                <br />
+                The work is next.
+              </h2>
+
+              <p className="mt-7 max-w-2xl text-base leading-8 text-text-on-card-secondary md:text-lg">
+                Explore the courses and find the discipline that brings you
+                into the room.
+              </p>
+            </div>
+
+            <PressedLink to="/courses">
+              Explore courses
+              <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </PressedLink>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

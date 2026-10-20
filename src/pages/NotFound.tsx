@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export function NotFound() {
   return (
     <main className="min-h-screen">
-      <div className="cuco-shell flex min-h-screen flex-col justify-center py-16">
+      <div className="cuco-shell flex min-h-screen flex-col justify-center py-8">
         <p className="cuco-kicker">404</p>
 
         <h1 className="cuco-editorial mt-4 text-5xl">

@@ -45,7 +45,7 @@ export function PublicLayout() {
   return (
     <div className="min-h-screen bg-smoked-powder text-text-on-substrate-primary">
       <header className="sticky top-0 z-50 w-full border-b border-smoked-shadow/30 bg-smoked-powder shadow-raised">
-        <div className="cuco-shell flex min-h-20 items-center justify-between gap-6">
+        <div className="cuco-shell flex min-h-20 items-center justify-between gap-4">
           <Link
             aria-label="CUCO home"
             className="shrink-0 rounded-control bg-smoked-card p-2 shadow-raised transition-[box-shadow,transform] duration-200 ease-cathedral hover:-translate-y-0.5 hover:shadow-raised-hover active:translate-y-0.5 active:shadow-pressed"
@@ -80,7 +80,7 @@ export function PublicLayout() {
         </div>
       </header>
 
-      <main className="relative z-10 min-h-[calc(100svh-80px)] pb-24 md:pb-0">
+      <main className="relative z-10 min-h-[calc(100svh-80px)] pb-12 md:pb-0">
         <Outlet />
       </main>
 

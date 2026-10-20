@@ -3,8 +3,9 @@ import { NavLink } from 'react-router-dom'
 const navigation = [
   { label: 'Home', to: '/' },
   { label: 'Courses', to: '/courses' },
-  { label: 'Instructors', to: '/instructors' },
-  { label: 'Contact', to: '/contact' },
+  { label: 'Faculty', to: '/instructors' },
+  { label: 'Story', to: '/our-story' },
+  { label: 'Series', to: '/vertical-series' },
 ]
 
 export function BottomNav() {
@@ -18,7 +19,7 @@ export function BottomNav() {
           key={item.to}
           className={({ isActive }) =>
             [
-              'flex min-w-16 flex-1 items-center justify-center rounded-control px-2 py-3 text-xs font-semibold transition-[box-shadow,transform,color] duration-200',
+              'flex min-w-14 flex-1 items-center justify-center rounded-control px-1 py-2.5 text-[10px] font-bold uppercase tracking-wider transition-[box-shadow,transform,color] duration-200',
               isActive
                 ? 'bg-smoked-powder text-text-on-substrate-primary shadow-pressed'
                 : 'text-text-on-substrate-muted active:translate-y-px active:shadow-pressed',

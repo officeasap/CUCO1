@@ -1,0 +1,324 @@
+/* CUCO — controlled compact layout */
+:root {
+  --section-y: clamp(24px, 3.5vw, 48px);
+  --section-gap: clamp(14px, 1.6vw, 22px);
+  --hero-y: clamp(28px, 4vw, 56px);
+  --cuco-compact-card-pad: 1.25rem;
+}
+
+/* Cap excessive spacing utilities inside page content.
+   Exact class-token matching avoids accidental substring matches. */
+main [class~="py-16"],
+main [class~="py-20"],
+main [class~="py-24"],
+main [class~="py-28"],
+main [class~="py-32"],
+main [class~="py-36"],
+main [class~="py-40"],
+main [class~="py-48"],
+main [class~="py-56"],
+main [class~="py-64"] {
+  padding-block: var(--section-y);
+}
+
+main [class~="pt-16"],
+main [class~="pt-20"],
+main [class~="pt-24"],
+main [class~="pt-28"],
+main [class~="pt-32"],
+main [class~="pt-40"],
+main [class~="pt-48"],
+main [class~="pt-56"],
+main [class~="pt-64"] {
+  padding-top: var(--section-y);
+}
+
+main [class~="pb-16"],
+main [class~="pb-20"],
+main [class~="pb-24"],
+main [class~="pb-28"],
+main [class~="pb-32"],
+main [class~="pb-40"],
+main [class~="pb-48"],
+main [class~="pb-56"],
+main [class~="pb-64"] {
+  padding-bottom: var(--section-y);
+}
+
+main [class~="mt-16"],
+main [class~="mt-20"],
+main [class~="mt-24"],
+main [class~="mt-28"],
+main [class~="mt-32"],
+main [class~="mt-40"],
+main [class~="mt-48"],
+main [class~="mt-56"],
+main [class~="mt-64"] {
+  margin-top: var(--section-gap);
+}
+
+main [class~="mb-16"],
+main [class~="mb-20"],
+main [class~="mb-24"],
+main [class~="mb-28"],
+main [class~="mb-32"],
+main [class~="mb-40"],
+main [class~="mb-48"],
+main [class~="mb-56"],
+main [class~="mb-64"] {
+  margin-bottom: var(--section-gap);
+}
+
+main [class~="gap-12"],
+main [class~="gap-16"],
+main [class~="gap-20"],
+main [class~="gap-24"],
+main [class~="gap-28"],
+main [class~="gap-32"] {
+  gap: var(--section-gap);
+}
+
+main [class~="space-y-12"] > :not(:last-child),
+main [class~="space-y-16"] > :not(:last-child),
+main [class~="space-y-20"] > :not(:last-child),
+main [class~="space-y-24"] > :not(:last-child),
+main [class~="space-y-28"] > :not(:last-child),
+main [class~="space-y-32"] > :not(:last-child) {
+  margin-block-start: 0;
+  margin-block-end: var(--section-gap);
+}
+
+/* Compact large padding only on card surfaces.
+   Do not globally erase minimum heights or nested-section padding. */
+main [class~="rounded-card"][class~="p-8"],
+main [class~="rounded-card"][class~="p-10"],
+main [class~="rounded-card"][class~="p-12"],
+main [class~="rounded-card"][class~="p-14"],
+main [class~="rounded-card"][class~="p-16"] {
+  padding: var(--cuco-compact-card-pad);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-y: 24px;
+    --section-gap: 14px;
+    --hero-y: 24px;
+    --cuco-compact-card-pad: 1rem;
+  }
+}
+
+/* CUCO — SITE-WIDE DENSITY PASS v2 */
+
+/* Cards: release unnecessary minimum heights and reduce excess padding.
+   Preserve artwork/image panels and their intended dimensions. */
+main .rounded-card:not([role="img"]) {
+  min-height: 0;
+}
+
+main .rounded-card:not([role="img"])[class~="p-5"],
+main .rounded-card:not([role="img"])[class~="p-6"],
+main .rounded-card:not([role="img"])[class~="p-7"],
+main .rounded-card:not([role="img"])[class~="p-8"],
+main .rounded-card:not([role="img"])[class~="p-9"],
+main .rounded-card:not([role="img"])[class~="p-10"],
+main .rounded-card:not([role="img"])[class~="p-12"],
+main .rounded-card:not([role="img"])[class~="p-14"],
+main .rounded-card:not([role="img"])[class~="p-16"] {
+  padding: clamp(1rem, 1.5vw, 1.375rem);
+}
+
+/* Footer: substantially reduce vertical footprint. */
+footer {
+  padding-block: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+footer [class~="py-12"],
+footer [class~="py-16"],
+footer [class~="py-20"],
+footer [class~="py-24"] {
+  padding-block: clamp(1rem, 2vw, 1.5rem);
+}
+
+footer [class~="gap-8"],
+footer [class~="gap-10"],
+footer [class~="gap-12"],
+footer [class~="gap-16"] {
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+
+/* Footer typography: restrained supporting copy, tighter headings. */
+footer p {
+  font-size: clamp(0.8125rem, 0.95vw, 0.9375rem);
+  line-height: 1.55;
+}
+
+footer h2 {
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+  line-height: 1.25;
+}
+
+footer h3 {
+  font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+  line-height: 1.35;
+}
+
+footer a {
+  font-size: 0.875rem;
+}
+
+/* Mobile: compact cards and footer without making text unreadable. */
+@media (max-width: 640px) {
+  main .rounded-card:not([role="img"])[class~="p-4"],
+  main .rounded-card:not([role="img"])[class~="p-5"],
+  main .rounded-card:not([role="img"])[class~="p-6"],
+  main .rounded-card:not([role="img"])[class~="p-7"],
+  main .rounded-card:not([role="img"])[class~="p-8"],
+  main .rounded-card:not([role="img"])[class~="p-10"],
+  main .rounded-card:not([role="img"])[class~="p-12"] {
+    padding: 1rem;
+  }
+
+  footer {
+    padding-block: 1.25rem;
+  }
+
+  footer p {
+    font-size: 0.8125rem;
+  }
+}
+
+/* CUCO — COMPACT PREMIUM UI: cards, controls, typography and footer */
+
+/* 1. Cards: less bulk, tighter internal spacing */
+main .rounded-card:not([role="img"]) {
+  min-height: 0;
+  padding: clamp(0.75rem, 1.2vw, 1.125rem);
+}
+
+main .rounded-card h1,
+main .rounded-card h2 {
+  font-size: clamp(1.125rem, 1.6vw, 1.5rem);
+  line-height: 1.25;
+}
+
+main .rounded-card h3,
+main .rounded-card h4 {
+  font-size: clamp(0.9375rem, 1.15vw, 1.0625rem);
+  line-height: 1.35;
+}
+
+main .rounded-card p,
+main .rounded-card li {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* 2. Buttons: compact dimensions while preserving usable touch targets */
+main button,
+main [role="button"] {
+  min-height: 2.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+main button:not([class~="p-0"]):not([class~="p-1"]),
+main [role="button"]:not([class~="p-0"]):not([class~="p-1"]) {
+  padding-block: 0.625rem;
+  padding-inline: 1rem;
+}
+
+/* 3. Footer: reduce the overall height and tighten every group */
+footer {
+  padding-block: 1rem !important;
+  font-size: 0.8125rem;
+}
+
+footer > div,
+footer section,
+footer nav {
+  row-gap: 0.625rem;
+}
+
+footer [class~="py-8"],
+footer [class~="py-10"],
+footer [class~="py-12"],
+footer [class~="py-16"],
+footer [class~="py-20"],
+footer [class~="py-24"] {
+  padding-block: 0.75rem !important;
+}
+
+footer [class~="gap-6"],
+footer [class~="gap-8"],
+footer [class~="gap-10"],
+footer [class~="gap-12"],
+footer [class~="gap-16"] {
+  gap: 0.75rem !important;
+}
+
+footer h1,
+footer h2 {
+  font-size: 1rem !important;
+  line-height: 1.3;
+  margin-block: 0.25rem;
+}
+
+footer h3,
+footer h4 {
+  font-size: 0.75rem !important;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  margin-block: 0.25rem;
+}
+
+footer p,
+footer li,
+footer nav a,
+footer address {
+  font-size: 0.75rem !important;
+  line-height: 1.5;
+}
+
+footer p {
+  margin-block: 0.375rem;
+}
+
+footer img {
+  max-height: 2rem;
+  width: auto;
+}
+
+footer a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+footer [class~="space-y-4"] > :not(:last-child),
+footer [class~="space-y-6"] > :not(:last-child),
+footer [class~="space-y-8"] > :not(:last-child) {
+  margin-block-end: 0.5rem;
+}
+
+/* 4. Mobile: tighter cards, compact footer, readable controls */
+@media (max-width: 640px) {
+  main .rounded-card:not([role="img"]) {
+    padding: 0.875rem;
+  }
+
+  main button,
+  main [role="button"] {
+    font-size: 0.8125rem;
+  }
+
+  footer {
+    padding-block: 0.75rem !important;
+  }
+
+  footer p,
+  footer li,
+  footer nav a,
+  footer address {
+    font-size: 0.75rem !important;
+  }
+}
+

@@ -1,0 +1,500 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-smoked-powder: #1c1b1a;
+  --color-smoked-card: #2f2f2c;
+  --color-smoked-shadow: #080503;
+  --color-smoked-ember: #c43503;
+  --color-smoked-success: #56cd64;
+  --color-smoked-warning: #e4b34a;
+  --color-smoked-information: #62a8c7;
+  --color-smoked-error: #d85c55;
+
+  --color-text-on-card-primary: #e5decc;
+  --color-text-on-card-secondary: #c9c1af;
+  --color-text-on-substrate-primary: #e5decc;
+  --color-text-on-substrate-muted: #b9b2a4;
+
+  --font-family-editorial: "EB Garamond", Georgia, serif;
+  --font-family-interface: Inter, ui-sans-serif, sans-serif;
+  --font-family-mono: "JetBrains Mono", monospace;
+
+  --radius-card: 16px;
+  --radius-card-sm: 12px;
+  --radius-control: 10px;
+  --radius-checkbox: 5px;
+  --radius-radio: 999px;
+
+  --ease-cathedral: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ============================================================
+     TAILWIND V4 SPACING SCALE — COMPACT OVERRIDE
+     ------------------------------------------------------------
+     Tailwind v4 reads these to generate py-*, px-*, p-*, gap-*,
+     space-y-*, space-x-*, m-*, mt-*, mb-*, etc.
+     Redefining the upper half of the scale shrinks the worst
+     offenders GLOBALLY without touching any JSX.
+
+     Original (Tailwind default) -> New (compact)
+       16 = 4rem  (64px)  ->  2.5rem (40px)
+       20 = 5rem  (80px)  ->  3rem   (48px)
+       24 = 6rem  (96px)  ->  3.5rem (56px)
+       28 = 7rem (112px)  ->  4rem   (64px)
+       32 = 8rem (128px)  ->  4.5rem (72px)
+       36 = 9rem (144px)  ->  5rem   (80px)
+       40 = 10rem(160px)  ->  5.5rem (88px)
+       48 = 12rem(192px)  ->  6rem   (96px)
+       56 = 14rem(224px)  ->  6.5rem (104px)
+       64 = 16rem(256px)  ->  7rem   (112px)
+     ============================================================ */
+  --spacing-16: 2.5rem;
+  --spacing-20: 3rem;
+  --spacing-24: 3.5rem;
+  --spacing-28: 4rem;
+  --spacing-32: 4.5rem;
+  --spacing-36: 5rem;
+  --spacing-40: 5.5rem;
+  --spacing-48: 6rem;
+  --spacing-56: 6.5rem;
+  --spacing-64: 7rem;
+}
+
+:root {
+  color-scheme: dark;
+
+  --material-substrate: #1c1b1a;
+  --material-card: #2f2f2c;
+  --material-shadow: #080503;
+
+  --operational-ember: #c43503;
+  --operational-success: #56cd64;
+  --operational-warning: #e4b34a;
+  --operational-information: #62a8c7;
+  --operational-error: #d85c55;
+
+  --text-card-primary: #e5decc;
+  --text-card-secondary: #c9c1af;
+  --text-substrate-primary: #e5decc;
+  --text-substrate-muted: #b9b2a4;
+
+  --shadow-physical:
+    6px 8px 14px rgba(8, 5, 3, 0.44),
+    -2px -2px 6px rgba(229, 222, 204, 0.018);
+
+  --shadow-float:
+    9px 12px 20px rgba(8, 5, 3, 0.52),
+    -2px -2px 7px rgba(229, 222, 204, 0.025);
+
+  --shadow-raised: var(--shadow-physical);
+  --shadow-raised-hover: var(--shadow-float);
+
+  --shadow-pressed:
+    inset 3px 4px 8px rgba(8, 5, 3, 0.48),
+    inset -1px -1px 4px rgba(229, 222, 204, 0.025);
+
+  --text-shadow-physical: 0 1px 1px rgba(8, 5, 3, 0.3);
+  --text-shadow-editorial: 0 1px 1px rgba(8, 5, 3, 0.28);
+  --shadow-contact: 0 0 0 3px rgba(196, 53, 3, 0.3);
+
+  --shell-width: 1200px;
+  --motion-cathedral: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --cuco-card-pad: clamp(16px, 1.5vw, 22px);
+  --cuco-copy-leading: 1.6;
+
+  font-family: Inter, ui-sans-serif, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: var(--cuco-copy-leading);
+  color: var(--text-substrate-primary);
+  background: var(--material-substrate);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--material-substrate);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--material-substrate);
+  color: var(--text-substrate-primary);
+  font-family: Inter, ui-sans-serif, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: var(--cuco-copy-leading);
+}
+
+/* Do not impose global height or width on logos and icons.
+   Let their component-level Tailwind dimensions take precedence. */
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+img {
+  vertical-align: middle;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin-block: 0 1rem;
+  line-height: var(--cuco-copy-leading);
+  text-wrap: pretty;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Moderate heading scale; no global overrides of text utilities. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "EB Garamond", Georgia, serif;
+  font-weight: 500;
+  text-wrap: balance;
+  text-shadow: var(--text-shadow-physical);
+}
+
+h1 {
+  font-size: clamp(2rem, 3.8vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.45rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
+
+h4 {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 0.9rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+/* CUCO typography utilities */
+.cuco-editorial {
+  font-family: "EB Garamond", Georgia, serif;
+  font-weight: 500;
+  text-shadow: var(--text-shadow-editorial);
+}
+
+.cuco-interface {
+  font-family: Inter, ui-sans-serif, sans-serif;
+}
+
+.cuco-mono,
+.cuco-numeric {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.cuco-numeric {
+  font-variant-numeric: tabular-nums;
+}
+
+.cuco-kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* Physical surfaces */
+:where(.bg-smoked-card) {
+  background-color: var(--material-card);
+  box-shadow: var(--shadow-physical);
+}
+
+:where(.rounded-card) {
+  border-radius: 16px;
+}
+
+:where(.rounded-card.bg-smoked-card),
+:where(.rounded-control.bg-smoked-card) {
+  background-color: var(--material-card);
+  box-shadow: var(--shadow-physical);
+}
+
+/*
+  NOTE: The previous substring selectors
+     [class*="rounded-card"][class*="shadow-raised"] { padding: ... }
+     and
+     [class*="card-container"], [class*="info-box"] { padding: ... }
+  have been REMOVED. They were double-padding cards and fighting your
+  Tailwind padding utilities — a major cause of the bloated look.
+  Card padding now comes exclusively from your JSX (p-* classes).
+*/
+
+/* Interactive surfaces */
+:where(button.bg-smoked-card),
+:where(a.bg-smoked-card),
+:where([role="button"].bg-smoked-card) {
+  background-color: var(--material-card);
+  box-shadow: var(--shadow-raised);
+  transition:
+    box-shadow 200ms var(--motion-cathedral),
+    transform 200ms var(--motion-cathedral);
+}
+
+:where(button.bg-smoked-card:hover),
+:where(a.bg-smoked-card:hover),
+:where([role="button"].bg-smoked-card:hover) {
+  box-shadow: var(--shadow-raised-hover);
+  transform: translateY(-1px);
+}
+
+:where(button.bg-smoked-card:active),
+:where(a.bg-smoked-card:active),
+:where([role="button"].bg-smoked-card:active) {
+  box-shadow: var(--shadow-pressed);
+  transform: translateY(1px);
+}
+
+/* Forms */
+:where(
+  input.bg-smoked-card,
+  select.bg-smoked-card,
+  textarea.bg-smoked-card
+) {
+  background-color: var(--material-card);
+  box-shadow: var(--shadow-pressed);
+  border: 1px solid rgba(229, 222, 204, 0.12);
+}
+
+:where(
+  input.bg-smoked-card:focus-visible,
+  select.bg-smoked-card:focus-visible,
+  textarea.bg-smoked-card:focus-visible
+) {
+  box-shadow: var(--shadow-pressed), var(--shadow-contact);
+}
+
+:where(input, select, textarea) {
+  border-color: rgba(229, 222, 204, 0.16);
+}
+
+:where(
+  input.bg-smoked-card,
+  select.bg-smoked-card,
+  textarea.bg-smoked-card
+)::placeholder {
+  color: var(--text-card-secondary);
+  opacity: 0.75;
+}
+
+/* Site shell */
+.cuco-shell {
+  width: min(calc(100% - 32px), var(--shell-width));
+  margin-inline: auto;
+}
+
+/* Focus and selection */
+:focus-visible {
+  outline: 3px solid var(--operational-ember);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--operational-ember);
+  color: var(--text-card-primary);
+}
+
+/* Gavelfall faculty-name animation */
+.cuco-gavelfall-name {
+  position: relative;
+  isolation: isolate;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.cuco-gavelfall-name__letters {
+  display: inline;
+}
+
+.cuco-gavelfall-name__letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, -0.42em, 0) rotateX(-22deg);
+  transform-origin: 50% 0%;
+  will-change: transform, opacity;
+}
+
+.cuco-gavelfall-name.is-landed .cuco-gavelfall-name__letter {
+  animation: cuco-gavelfall-drop 640ms
+    cubic-bezier(0.18, 0.78, 0.22, 1.12) both;
+  animation-delay: calc(var(--letter-index, 0) * 24ms);
+}
+
+.cuco-gavelfall-name::after {
+  position: absolute;
+  z-index: 2;
+  top: 0.08em;
+  bottom: 0.02em;
+  left: -12%;
+  width: 9%;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(229, 222, 204, 0.9),
+    transparent
+  );
+  transform: skewX(-18deg) translateX(-160%);
+}
+
+.cuco-gavelfall-name.is-landed::after {
+  animation: cuco-gavelfall-streak 360ms ease-in 940ms both;
+}
+
+@keyframes cuco-gavelfall-drop {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -0.42em, 0) rotateX(-22deg);
+  }
+  68% {
+    opacity: 1;
+    transform: translate3d(0, 0.06em, 0) rotateX(2deg);
+  }
+  84% {
+    opacity: 1;
+    transform: translate3d(0, -0.025em, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes cuco-gavelfall-streak {
+  0% {
+    opacity: 0;
+    transform: skewX(-18deg) translateX(-160%);
+  }
+  20% {
+    opacity: 0.95;
+  }
+  58% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    transform: skewX(-18deg) translateX(1250%);
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --cuco-card-pad: 16px;
+    --cuco-copy-leading: 1.55;
+  }
+
+  .cuco-shell {
+    width: calc(100% - 28px);
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 8vw, 2.65rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  h3 {
+    font-size: clamp(1.15rem, 4.8vw, 1.45rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .cuco-gavelfall-name__letter {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    will-change: auto;
+  }
+
+  .cuco-gavelfall-name::after {
+    display: none;
+    animation: none !important;
+  }
+}

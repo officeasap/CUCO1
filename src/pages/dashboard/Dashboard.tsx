@@ -37,7 +37,7 @@ export function Dashboard() {
     'Learner'
 
   return (
-    <section className="space-y-8">
+    <section className="space-y-5">
       <header>
         <p className="cuco-kicker text-text-on-substrate-muted">
           LEARNER DASHBOARD
