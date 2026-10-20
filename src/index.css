@@ -3,6 +3,7 @@
    Rules:
    - No glow. No blur. No color rings.
    - Flat card surfaces. Inset focus. Compact type scale.
+   - Gavelfall animation safe for all devices.
    ============================================================ */
 
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
@@ -273,11 +274,9 @@
 }
 
 /* ============================================================
-   GAVELFALL ANIMATION
-   ============================================================ */
-/* ============================================================
    GAVELFALL NAME — Cathedral reveal animation
-   Works on desktop AND mobile. Streak light = 15s. Drop = 30ms/letter.
+   Mobile-safe: no blur filter, no clip-path, GPU-friendly.
+   Drop = 900ms/letter. Stagger = 30ms. Streak = 15s.
    ============================================================ */
 
 .cuco-gavelfall-name {
@@ -299,8 +298,10 @@
   transform: translate3d(0, -0.55em, 0) rotateX(-28deg);
   transform-origin: 50% 0%;
   will-change: transform, opacity;
-  /* Each letter drops for 900ms — heavy, weighted */
   transition: none;
+  /* Force GPU rasterization on mobile for consistent animation */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .cuco-gavelfall-name.is-landed .cuco-gavelfall-name__letter {
@@ -310,7 +311,9 @@
   animation-delay: calc(var(--letter-index, 0) * 30ms);
 }
 
-/* The streak — a silver light that sweeps across the name for 15s */
+/* The streak — a silver light that sweeps across the name for 15s.
+   Mobile-safe: NO filter blur (unsupported/unreliable on mobile GPUs),
+   use a soft gradient instead. */
 .cuco-gavelfall-name::after {
   position: absolute;
   z-index: 2;
@@ -330,8 +333,9 @@
     transparent 100%
   );
   transform: skewX(-18deg) translateX(-200%);
-  filter: blur(0.5px);
   will-change: transform, opacity;
+  /* NOTE: filter blur REMOVED — breaks animation on iOS Safari & Android */
+  /* Soft edge achieved via the gradient stops (20% / 80% transparent)  */
 }
 
 /* When landed, run the 15s sweep */
@@ -380,13 +384,55 @@
   }
 }
 
-/* Mobile: ensure no parent clips the streak */
+/* ============================================================
+   MOBILE-SPECIFIC GAVELFALL OVERRIDES
+   Parent cards with overflow-hidden clip the streak. We override
+   any ancestor that would clip it while keeping the card rounded.
+   ============================================================ */
+
+/* Mobile: the card parent that holds the gavelfall must NOT clip */
 @media (max-width: 1023px) {
+  /* The article wrapper inside FacultyCard uses overflow-hidden.
+     We add a specific class the component can add to opt into this. */
+  article:has(.cuco-gavelfall-name) {
+    overflow: visible !important;
+  }
+
+  /* Prevent the shadow-float from being clipped too */
+  article:has(.cuco-gavelfall-name).rounded-card {
+    /* keep rounded corners visually by masking only the card, not the children */
+    border-radius: 16px;
+  }
+
   .cuco-gavelfall-name {
-    /* Prevent parent overflow:hidden from clipping the sweep */
-    clip-path: none;
+    /* Prevent any inherited clip-path from cutting the streak */
+    clip-path: none !important;
+    /* Ensure no inherited filter ruins GPU animation */
+    filter: none !important;
   }
 }
+
+/* Fallback: ensure the streak is not clipped on ANY viewport */
+.cuco-gavelfall-name::after {
+  /* allow the sweep to extend past the name box */
+  clip-path: none;
+}
+
+/* ============================================================
+   REDUCED MOTION — respect user preference
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .cuco-gavelfall-name__letter {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .cuco-gavelfall-name::after {
+    display: none;
+    animation: none !important;
+  }
+}
+
 /* ============================================================
    UTILITIES — section rhythm
    ============================================================ */
